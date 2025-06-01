@@ -16,7 +16,9 @@ import {
   FaMapMarkerAlt,
   FaQuestionCircle,
   FaLightbulb,
+   FaPhoneAlt 
 } from 'react-icons/fa';
+import { GrTasks } from "react-icons/gr";
 import { MdClose, MdInfo, MdSupervisorAccount, MdOutlinePhotoLibrary } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import logo from '../assets/pryzenlogo2.png';
@@ -60,6 +62,16 @@ const navItems = [
     name: 'Company',
     icon: <FaBuilding />,
     children: company,
+  },
+  {
+    name: 'Portfolio',
+    icon: <GrTasks />,
+    path: '/portfolio',
+  },
+  {
+    name: 'Contact Us',
+    icon: <FaPhoneAlt />,
+    path: '/contactus',
   },
 ];
 

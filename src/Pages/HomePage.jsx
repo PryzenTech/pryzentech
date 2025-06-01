@@ -1,8 +1,12 @@
 import React from 'react'
 
+
 const HomePage = () => {
   return (
-    <div className='m-20'>HomePage</div>
+    <div className='m-20'>HomePage
+    {/* sections */}
+    </div>
+    
   )
 }
 
