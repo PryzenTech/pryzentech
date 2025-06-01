@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react'; // Added useCallback
 import {
   FaHome,
   FaBuilding,
@@ -16,7 +16,7 @@ import {
   FaMapMarkerAlt,
   FaQuestionCircle,
   FaLightbulb,
-   FaPhoneAlt 
+  FaPhoneAlt
 } from 'react-icons/fa';
 import { GrTasks } from "react-icons/gr";
 import { MdClose, MdInfo, MdSupervisorAccount, MdOutlinePhotoLibrary } from 'react-icons/md';
@@ -24,27 +24,26 @@ import { Link } from 'react-router-dom';
 import logo from '../assets/pryzenlogo2.png';
 
 const itSolutions = [
-  { name: 'Custom Website Development', path: '/custom-website-development', icon: <FaWrench /> },
-  { name: 'Backend Development', path: '/backend-development', icon: <FaCogs /> },
-  { name: 'Frontend Development', path: '/frontend-development', icon: <FaMobile /> },
-  { name: 'React Development', path: '/react-development', icon: <FaAndroid /> },
-  { name: 'UI/UX Design', path: '/ui-ux-design', icon: <FaApple /> },
-  { name: 'Software Maintenance & Support', path: '/software-maintenance-support', icon: <FaShieldAlt /> },
-  { name: 'SEO Optimization', path: '/seo-optimization', icon: <FaCloud /> },
-  { name: 'Google Advertising', path: '/google-advertising', icon: <FaLightbulb /> },
+  { name: 'Custom Website Development', path: '/solutions/web-development', icon: <FaWrench /> },
+  { name: 'Backend Development', path: '/solutions/backend-development', icon: <FaCogs /> },
+  { name: 'Frontend Development', path: '/solutions/frontend-development', icon: <FaMobile /> },
+  { name: 'React Development', path: '/solutions/react-development', icon: <FaAndroid /> },
+  { name: 'UI/UX Design', path: '/solutions/ui-ux', icon: <FaApple /> },
+  { name: 'Software Maintenance & Support', path: '/solutions/software-maintenanace', icon: <FaShieldAlt /> },
+  { name: 'SEO Optimization', path: '/solutions/seo-optimization', icon: <FaCloud /> },
+  { name: 'Google Advertising', path: '/solutions/google-advertising', icon: <FaLightbulb /> },
 ];
 
-
 const company = [
-  { name: 'About', path: '/about', icon: <MdInfo /> },
-  { name: 'Mission, Vision and Values', path: '/mission-vision-and-values', icon: <FaLightbulb /> },
-  { name: 'Awards', path: '/awards', icon: <FaAward /> },
-  { name: 'Leadership Team', path: '/leadership-team', icon: <MdSupervisorAccount /> },
-  { name: 'Media', path: '/media', icon: <MdOutlinePhotoLibrary /> },
-  { name: 'Careers', path: '/careers', icon: <FaBriefcase /> },
-  { name: 'Why Choose Us', path: '/why-choose-us', icon: <FaUsers /> },
-  { name: 'Locations', path: '/locations', icon: <FaMapMarkerAlt /> },
-  { name: 'FAQ', path: '/faq', icon: <FaQuestionCircle /> },
+  { name: 'About', path: '/company/aboutcompany', icon: <MdInfo /> },
+  { name: 'Mission, Vision and Values', path: '/company/vision-mission', icon: <FaLightbulb /> },
+  { name: 'Awards', path: '/company/awards', icon: <FaAward /> },
+  { name: 'Leadership Team', path: '/company/team', icon: <MdSupervisorAccount /> },
+  { name: 'Media', path: '/company/media', icon: <MdOutlinePhotoLibrary /> },
+  { name: 'Careers', path: '/company/careers', icon: <FaBriefcase /> },
+  { name: 'Why Choose Us', path: '/company/why-choose-us', icon: <FaUsers /> },
+  { name: 'Locations', path: '/company/locations', icon: <FaMapMarkerAlt /> },
+  { name: 'FAQ', path: '/company/faq', icon: <FaQuestionCircle /> },
 ];
 
 const navItems = [
@@ -77,24 +76,33 @@ const navItems = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [hovered, setHovered] = useState(null);
+  const [activeDropdown, setActiveDropdown] = useState(null); // Renamed hovered to activeDropdown for clarity
   const [mobileDropdown, setMobileDropdown] = useState(null);
 
-  // Toggle dropdown on mobile menu for better UX
-  const toggleMobileDropdown = (name) => {
-    if (mobileDropdown === name) {
-      setMobileDropdown(null);
-    } else {
-      setMobileDropdown(name);
-    }
-  };
+  // Memoize toggle functions for potential performance gains
+  const toggleMobileDropdown = useCallback((name) => {
+    setMobileDropdown(prev => (prev === name ? null : name));
+  }, []);
+
+  const handleMouseEnter = useCallback((name) => {
+    setActiveDropdown(name);
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setActiveDropdown(null);
+  }, []);
+
+  const closeMobileMenu = useCallback(() => {
+    setIsOpen(false);
+    setMobileDropdown(null); // Also close any open mobile dropdown
+  }, []);
 
   return (
     <nav className="bg-gradient-to-r from-purple-900 to-purple-400 text-white shadow-md fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
         {/* Logo */}
         <div className="text-2xl font-bold overflow-hidden">
-          <Link to="/">
+          <Link to="/" onClick={closeMobileMenu}> {/* Close mobile menu on logo click */}
             <img src={logo} alt="Logo" className="h-14" />
           </Link>
         </div>
@@ -110,28 +118,41 @@ const Navbar = () => {
             <li
               key={idx}
               className="relative group text-sm"
-              onMouseEnter={() => setHovered(item.name)}
-              onMouseLeave={() => setHovered(null)}
+              onMouseEnter={() => handleMouseEnter(item.name)}
+              onMouseLeave={handleMouseLeave}
             >
-              <div className="flex items-center gap-1 cursor-pointer hover:text-purple-300 select-none">
-                {item.icon}
-                <span className=''>{item.name}</span>
-              </div>
+              {item.path ? (
+                // Direct link without dropdown
+                <Link to={item.path} className="flex items-center gap-1 cursor-pointer hover:text-purple-300 select-none py-2 px-1">
+                  {item.icon}
+                  <span className=''>{item.name}</span>
+                </Link>
+              ) : (
+                // Item with dropdown
+                <div className="flex items-center gap-1 cursor-pointer hover:text-purple-300 select-none py-2 px-1">
+                  {item.icon}
+                  <span className=''>{item.name}</span>
+                </div>
+              )}
 
               {/* Dropdown on hover for desktop */}
               {item.children && (
                 <ul
-                  className={`absolute z-50 bg-white text-black mt-2 p-2 rounded shadow-lg w-72 ${
-                    hovered === item.name ? 'block' : 'hidden'
-                  } group-hover:block`}
+                  // Use activeDropdown for explicit control, combined with group-hover for resilience
+                  className={`absolute z-50 bg-white text-black mt-2 p-2 rounded shadow-lg w-72 origin-top transition-all duration-200 ease-out transform
+                    ${activeDropdown === item.name ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 pointer-events-none'}
+                    group-hover:scale-y-100 group-hover:opacity-100 group-hover:pointer-events-auto
+                  `}
                 >
                   {item.children.map((subItem, subIdx) => (
                     <li
                       key={subIdx}
                       className="px-4 py-2 hover:bg-purple-100 hover:text-purple-700 transition-colors flex items-center gap-2"
                     >
-                      {subItem.icon}
-                      <Link to={subItem.path}>{subItem.name}</Link>
+                      <Link to={subItem.path} className="flex items-center gap-2 w-full h-full"> {/* Ensure link covers full area */}
+                        {subItem.icon}
+                        {subItem.name}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -143,34 +164,48 @@ const Navbar = () => {
 
       {/* Mobile Menu Slide-in */}
       <div
-        className={`fixed top-0 right-0 text-lg h-full w-64 bg-purple-900 text-white shadow-lg transform transition-transform duration-300 ease-in-out z-50
+        className={`fixed top-0 right-0 text-lg h-full w-64 bg-purple-900 text-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 overflow-y-auto
           ${isOpen ? 'translate-x-0' : 'translate-x-full'}
         `}
       >
-        <ul className="flex flex-col mt-20 px-4">
+        <div className="flex justify-end p-4"> {/* Close button inside mobile menu */}
+          <MdClose className="text-3xl cursor-pointer" onClick={closeMobileMenu} />
+        </div>
+        <ul className="flex flex-col mt-4 px-4"> {/* Adjusted margin-top for close button */}
           {navItems.map((item, idx) => (
             <li key={idx} className="mb-2">
               {/* Main item */}
-              <div
-                onClick={() => (item.children ? toggleMobileDropdown(item.name) : setIsOpen(false))}
-                className="flex items-center gap-2 cursor-pointer px-2 py-3 hover:bg-purple-700 rounded select-none"
-              >
-                {item.icon}
-                <span>{item.name}</span>
-                {item.children && (
-                  <svg
-                    className={`w-4 h-4 ml-auto transition-transform ${
-                      mobileDropdown === item.name ? 'rotate-90' : ''
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                  </svg>
-                )}
-              </div>
+              {item.path ? (
+                <Link
+                  to={item.path}
+                  onClick={closeMobileMenu}
+                  className="flex items-center gap-2 cursor-pointer px-2 py-3 hover:bg-purple-700 rounded select-none"
+                >
+                  {item.icon}
+                  <span>{item.name}</span>
+                </Link>
+              ) : (
+                <div
+                  onClick={() => toggleMobileDropdown(item.name)}
+                  className="flex items-center gap-2 cursor-pointer px-2 py-3 hover:bg-purple-700 rounded select-none"
+                >
+                  {item.icon}
+                  <span>{item.name}</span>
+                  {item.children && (
+                    <svg
+                      className={`w-4 h-4 ml-auto transition-transform ${
+                        mobileDropdown === item.name ? 'rotate-90' : ''
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  )}
+                </div>
+              )}
 
               {/* Mobile dropdown children */}
               {item.children && mobileDropdown === item.name && (
@@ -179,7 +214,7 @@ const Navbar = () => {
                     <li key={subIdx}>
                       <Link
                         to={subItem.path}
-                        onClick={() => setIsOpen(false)}
+                        onClick={closeMobileMenu} // Close mobile menu when sub-item is clicked
                         className="flex items-center gap-2 px-2 py-2 rounded hover:bg-purple-700 transition-colors"
                       >
                         {subItem.icon}
@@ -198,7 +233,7 @@ const Navbar = () => {
       {isOpen && (
         <div
           className="fixed inset-0 bg-black opacity-50 z-40"
-          onClick={() => setIsOpen(false)}
+          onClick={closeMobileMenu} // Close mobile menu when overlay is clicked
           aria-hidden="true"
         />
       )}

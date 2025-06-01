@@ -3,6 +3,23 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Portfolio from './Pages/Portfolio';
 import ContactUs from './section/ContactUs';
+import AboutCompany from './Components/company/AboutCompany';
+import Awards from './Components/company/Awards';
+import Careers from './Components/company/Careers';
+import ChooseUs from './Components/company/ChooseUs';
+import FAQ from './Components/company/FAQ';
+import LeadershipTeam from './Components/company/LeadershipTeam';
+import Locations from './Components/company/Locations';
+import Vision from './Components/company/Vision';
+import Media from './Components/company/Media';
+import BackendDevelopment from './Components/itSolutions/BackendDevelopment';
+import FrontendDevelopment from './Components/itSolutions/FrontendDevelopment';
+import GoogleAds from './Components/itSolutions/GoogleAds';
+import ReactDevelopment from './Components/itSolutions/ReactDevelopment';
+import SEOoptimization from './Components/itSolutions/SEOoptimization';
+import SoftwareMaintenance from './Components/itSolutions/SoftwareMaintenance';
+import UIUX from './Components/itSolutions/UIUX';
+import WebDevelopment from './Components/itSolutions/WebDevelopment';
 
 const Home = () => <div className="p-4 text-xl">Welcome to Home</div>;
 const About = () => <div className="p-4 text-xl">About Us</div>;
@@ -18,10 +35,31 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/mobile-app-development-company" element={<MobileAppDev />} />
           <Route path="/portfolio" element={<Portfolio/>} />
           <Route path="/contactus" element={<ContactUs/>} />
-          {/* Add more Route components for other paths you defined in Navbar */}
+
+          {/* Company Routes */}
+          <Route path="/company/aboutcompany" element={<AboutCompany/>} />
+          <Route path="/company/awards" element={<Awards/>} />
+          <Route path="/company/careers" element={<Careers/>} />
+          <Route path="/company/why-choose-us" element={<ChooseUs/>} />
+          <Route path="/company/faq" element={<FAQ/>} />
+          <Route path="/company/team" element={<LeadershipTeam/>} />
+          <Route path="/company/locations" element={<Locations/>} />
+          <Route path="/company/vision-mission" element={<Vision/>} />
+          <Route path="/company/media" element={<Media/>} />
+
+          {/* It solutions */}
+          <Route path="/solutions/backend-development" element={<BackendDevelopment/>} />
+          <Route path="/solutions/frontend-development" element={<FrontendDevelopment/>} />
+          <Route path="/solutions/google-advertising" element={<GoogleAds/>} />
+          <Route path="/solutions/react-development" element={<ReactDevelopment/>} />
+          <Route path="/solutions/seo-optimization" element={<SEOoptimization/>} />
+          <Route path="/solutions/software-maintenanace" element={<SoftwareMaintenance/>} />
+          <Route path="/solutions/ui-ux" element={<UIUX/>} />
+          <Route path="/solutions/web-development" element={<WebDevelopment/>} />
+
+
         </Routes>
       </div>
     </Router>
