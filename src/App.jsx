@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Portfolio from './Pages/Portfolio';
-import ContactUs from './section/ContactUs';
+import ContactUs from './sections/ContactUs';
 import AboutCompany from './Components/company/AboutCompany';
 import Awards from './Components/company/Awards';
 import Careers from './Components/company/Careers';
@@ -20,12 +20,7 @@ import SEOoptimization from './Components/itSolutions/SEOoptimization';
 import SoftwareMaintenance from './Components/itSolutions/SoftwareMaintenance';
 import UIUX from './Components/itSolutions/UIUX';
 import WebDevelopment from './Components/itSolutions/WebDevelopment';
-
-const Home = () => <div className="p-4 text-xl">Welcome to Home</div>;
-const About = () => <div className="p-4 text-xl">About Us</div>;
-const MobileAppDev = () => <div className="p-4 text-xl">Mobile App Development</div>;
-// Add more dummy pages as needed...
-
+import HomePage from './Pages/HomePage';
 const App = () => {
 
   return (
@@ -33,8 +28,7 @@ const App = () => {
       <div className="text-4xl">
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/portfolio" element={<Portfolio/>} />
           <Route path="/contactus" element={<ContactUs/>} />
 

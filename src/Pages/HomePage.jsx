@@ -1,10 +1,10 @@
 import React from 'react'
-
+import Hero from '../sections/Hero'
 
 const HomePage = () => {
   return (
-    <div className='m-20'>HomePage
-    {/* sections */}
+    <div className='text-purple-900'>
+        <Hero />
     </div>
     
   )

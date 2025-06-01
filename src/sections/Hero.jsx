@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Portfolio = () => {
+const Hero = () => {
   return (
-    <div className='border'>
+    <div className='border-2 border-amber-500'>
       <div className='max-w-7xl mt-20 mx-auto px-4 py-8'>
-        <h1 className='text-4xl text-center font-bold text-purple-900'>Portfolio</h1>
+        <h1 className='text-4xl text-center font-bold text-purple-900'>Hero</h1>
         <p className='text-center text-lg text-gray-700 mt-4'>
           Explore our diverse portfolio showcasing successful projects across various industries.
         </p>
@@ -13,4 +13,4 @@ const Portfolio = () => {
   )
 }
 
-export default Portfolio
+export default Hero
