@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import uiux from '../assets/uiux1.jpeg';
+import heroimg from '../assets/heroimg2.png';
 
 const Hero = () => {
   const textRef = useRef(null);
@@ -88,9 +88,9 @@ const Hero = () => {
           className="ml-2 md:w-[45%] flex-shrink-0" // prevent shrinking due to text growth
         >
           <img
-            src={uiux}
+            src={heroimg}
             alt="UI/UX"
-            className="w-full h-auto rounded-xl shadow-xl"
+            className="w-full h-auto rounded-xl "
           />
         </div>
       </div>
