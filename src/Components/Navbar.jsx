@@ -22,14 +22,16 @@ import { Link } from 'react-router-dom';
 import logo from '../assets/pryzenlogo2.png';
 
 const itSolutions = [
-  { name: 'Mobile App Development Company', path: '/mobile-app-development-company', icon: <FaMobile /> },
-  { name: 'Android App Development', path: '/android-app-development', icon: <FaAndroid /> },
-  { name: 'IOS App Development', path: '/ios-app-development', icon: <FaApple /> },
-  { name: 'IT Consultancy', path: '/it-consultancy', icon: <FaLightbulb /> },
-  { name: 'Cloud Computing', path: '/cloud-computing', icon: <FaCloud /> },
-  { name: 'Cyber Security', path: '/cyber-security', icon: <FaShieldAlt /> },
-  { name: 'Custom Software', path: '/custom-software', icon: <FaWrench /> },
+  { name: 'Custom Website Development', path: '/custom-website-development', icon: <FaWrench /> },
+  { name: 'Backend Development', path: '/backend-development', icon: <FaCogs /> },
+  { name: 'Frontend Development', path: '/frontend-development', icon: <FaMobile /> },
+  { name: 'React Development', path: '/react-development', icon: <FaAndroid /> },
+  { name: 'UI/UX Design', path: '/ui-ux-design', icon: <FaApple /> },
+  { name: 'Software Maintenance & Support', path: '/software-maintenance-support', icon: <FaShieldAlt /> },
+  { name: 'SEO Optimization', path: '/seo-optimization', icon: <FaCloud /> },
+  { name: 'Google Advertising', path: '/google-advertising', icon: <FaLightbulb /> },
 ];
+
 
 const company = [
   { name: 'About', path: '/about', icon: <MdInfo /> },
