@@ -98,7 +98,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-gradient-to-r from-purple-900 to-purple-400 text-white shadow-md fixed w-full z-50">
+    <nav className="bg-gradient-to-r from-purple-900 to-purple-400 text-white shadow-md fixed top-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
         {/* Logo */}
         <div className="text-2xl font-bold overflow-hidden">
@@ -139,7 +139,7 @@ const Navbar = () => {
               {item.children && (
                 <ul
                   // Use activeDropdown for explicit control, combined with group-hover for resilience
-                  className={`absolute z-50 bg-white text-black mt-2 p-2 rounded shadow-lg w-72 origin-top transition-all duration-200 ease-out transform
+                  className={`absolute z-50 bg-white text-black mt-[1px] p-2 rounded shadow-lg w-72 origin-top transition-all duration-200 ease-out transform border-2 
                     ${activeDropdown === item.name ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 pointer-events-none'}
                     group-hover:scale-y-100 group-hover:opacity-100 group-hover:pointer-events-auto
                   `}
@@ -179,7 +179,7 @@ const Navbar = () => {
                 <Link
                   to={item.path}
                   onClick={closeMobileMenu}
-                  className="flex items-center gap-2 cursor-pointer px-2 py-3 hover:bg-purple-700 rounded select-none"
+                  className="flex items-center gap-2 cursor-pointer px-2 py-3 hover:bg-purple-700 rounded select-none "
                 >
                   {item.icon}
                   <span>{item.name}</span>
