@@ -31,7 +31,7 @@ const itSolutions = [
   { name: 'UI/UX Design', path: '/solutions/ui-ux', icon: <FaApple /> },
   { name: 'Software Maintenance & Support', path: '/solutions/software-maintenanace', icon: <FaShieldAlt /> },
   { name: 'SEO Optimization', path: '/solutions/seo-optimization', icon: <FaCloud /> },
-  { name: 'Google Advertising', path: '/solutions/google-advertising', icon: <FaLightbulb /> },
+  { name: 'Advertising', path: '/solutions/google-advertising', icon: <FaLightbulb /> },
 ];
 
 const company = [
