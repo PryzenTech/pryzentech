@@ -86,13 +86,14 @@ const WebDevelopment = () => {
 
   return (
     <div className="bg-gradient-to-br from-purple-50 to-purple-200 min-h-screen py-2 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto rounded-xl shadow-2xl overflow-hidden bg-white">
+      <div className="max-w-[90vw] mx-auto rounded-xl shadow-2xl overflow-hidden bg-white">
         {/* Hero Section for Custom Website Development */}
-        <div className="relative p-4 md:p-6 lg:p-8 text-center bg-purple-700 text-white">
+        <div className="relative p-4 md:p-6 lg:p-8 text-center bg-gradient-to-b from-purple-950 to-purple-200  text-white">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
             Custom Website Development
           </h1>
-          <p className="text-lg sm:text-xl opacity-90 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl opacity-90 max-w-3xl mx-auto text-purple-950
+          ">
             Crafting bespoke web solutions tailored to your unique brand and business goals.
           </p>
         </div>

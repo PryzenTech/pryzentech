@@ -107,7 +107,7 @@ const OurCompany = () => {
           }
 
           .swiper-pagination-bullet {
-            background-color: #a78bfa !important; /* Light purple for inactive bullets */
+            background-color: #a78bfa !important;  /* Light purple for inactive bullets */
             opacity: 0.7;
       
             width: 10px; /* Adjust size */
@@ -183,7 +183,7 @@ const OurCompany = () => {
           spaceBetween={30}
           slidesPerView={1}
           autoplay={{
-            delay: 1000, // Auto-swipe every 1 seconds
+            delay: 3000, // Auto-swipe every 1 seconds
             disableOnInteraction: false, // Continue autoplay after user interaction
           }}
           loop={true}
