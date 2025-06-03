@@ -183,7 +183,7 @@ const OurCompany = () => {
           spaceBetween={30}
           slidesPerView={1}
           autoplay={{
-            delay: 1000, // Auto-swipe every 1 seconds
+            delay: 3000, // Auto-swipe every 1 seconds
             disableOnInteraction: false, // Continue autoplay after user interaction
           }}
           loop={true}
