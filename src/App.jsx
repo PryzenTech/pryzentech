@@ -29,7 +29,7 @@ const App = () => {
 
     <Router>
       <Navbar />
-      <div className="mt-18">
+      <div className="mt-18 ">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/portfolio" element={<Portfolio/>} />

@@ -14,7 +14,7 @@ const ContactUs = () => {
 
   return (
     <div className="bg-gradient-to-r from-purple-100 to-purple-400 py-16 min-h-screen">
-      <div className="max-w-3xl mx-auto px-4" ref={formRef}>
+      <div className="max-w-[90vw] mx-auto px-4" ref={formRef}>
         <h1 className="text-4xl text-center font-bold text-purple-900 mb-10">
           Contact Us
         </h1>
