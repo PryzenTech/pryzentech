@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useNavigate } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const FAQ = () => {
+  const navigate = useNavigate();
   // State to manage which FAQ item is open
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -146,7 +148,8 @@ const FAQ = () => {
           <p className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto opacity-95">
             Don't hesitate to reach out to our team for personalized assistance regarding our **web services** or your specific project needs.
           </p>
-          <button className="bg-white text-purple-700 font-bold py-4 px-10 rounded-full shadow-lg hover:bg-purple-100 hover:text-purple-900 transition-all duration-300 transform hover:scale-105">
+          <button onClick={()=>{navigate('/contactus')}}
+          className="bg-white text-purple-700 font-bold py-4 px-10 rounded-full shadow-lg hover:bg-purple-100 hover:text-purple-900 transition-all duration-300 transform hover:scale-105">
             Contact PryzenTech 
           </button>
         </section>

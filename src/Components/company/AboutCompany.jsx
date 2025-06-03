@@ -1,10 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useNavigate } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutCompany = () => {
+  const navigate = useNavigate();
   // Refs for GSAP animations
   const heroTextRef = useRef(null);
   const heroImageRef = useRef(null);
@@ -266,7 +268,8 @@ const AboutCompany = () => {
           <p className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto opacity-95">
             Let's discuss how PryzenTech can help you achieve your business goals with expert web services.
           </p>
-          <button className="bg-white text-purple-700 font-bold py-4 px-10 rounded-full shadow-lg hover:bg-purple-100 hover:text-purple-900 transition-all duration-300 transform hover:scale-105">
+          <button onClick={()=>{navigate('/contactus')}}
+          className="bg-white text-purple-700 font-bold py-4 px-10 rounded-full shadow-lg hover:bg-purple-100 hover:text-purple-900 transition-all duration-300 transform hover:scale-105">
             Schedule Your Free Consultation
           </button>
         </section>

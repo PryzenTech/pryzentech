@@ -1,10 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useNavigate } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ChooseUs = () => {
+  const navigate = useNavigate();
   // Refs for GSAP animations
   const headingRef = useRef(null);
   const introTextRef = useRef(null);
@@ -162,7 +164,8 @@ const ChooseUs = () => {
           <p className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto opacity-95">
             Let us help you build a powerful online presence that drives real business value.
           </p>
-          <button className="bg-white text-purple-700 font-bold py-4 px-10 rounded-full shadow-lg hover:bg-purple-100 hover:text-purple-900 transition-all duration-300 transform hover:scale-105">
+          <button onClick={()=>{navigate('/contactus')}}
+          className="bg-white text-purple-700 font-bold py-4 px-10 rounded-full shadow-lg hover:bg-purple-100 hover:text-purple-900 transition-all duration-300 transform hover:scale-105">
             Get a Free Quote Today
           </button>
         </section>

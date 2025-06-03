@@ -104,9 +104,10 @@ const Hero = () => {
               </button>
             </div>
             <div className="flex items-center gap-4">
-              <FaPhoneAlt />
+              <p className="text-red-600 cursor-pointer"><FaPhoneAlt /></p>
               <div>
-                <p className="text-purple-800 cursor-pointer">Call us 8882320645</p>
+                <p  className="text-purple-800 cursor-pointer">Call us: <a href="tel:+918882320645" className="text-purple-800 cursor-pointer hover:text-purple-600 transition-colors duration-200">+91 8882320645</a></p>
+                
                 <p className=" h-0.5 bg-black"></p>
                 <p className="text-red-400">for any questions</p>
               </div>
