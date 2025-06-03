@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useNavigate } from 'react-router-dom';
 import kunalimg from '../../assets/Kunal.jpg'
 
 gsap.registerPlugin(ScrollTrigger);
 
 const LeadershipTeam = () => {
+  const navigate = useNavigate();
   // Refs for GSAP animations
   const headingRef = useRef(null);
   const introTextRef = useRef(null);
@@ -135,7 +137,7 @@ const LeadershipTeam = () => {
           <p className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto opacity-95">
             Connect with our leadership team to discuss your next **digital project** and discover how PryzenTech can bring your vision to life.
           </p>
-          <button className="bg-white text-purple-700 font-bold py-4 px-10 rounded-full shadow-lg hover:bg-purple-100 hover:text-purple-900 transition-all duration-300 transform hover:scale-105">
+          <button onClick={()=>{navigate('/contactus')}} className="bg-white text-purple-700 font-bold py-4 px-10 rounded-full shadow-lg hover:bg-purple-100 hover:text-purple-900 transition-all duration-300 transform hover:scale-105">
             Contact Our Team
           </button>
         </section>
