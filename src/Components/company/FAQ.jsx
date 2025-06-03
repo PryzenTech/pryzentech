@@ -147,7 +147,7 @@ const FAQ = () => {
             Don't hesitate to reach out to our team for personalized assistance regarding our **web services** or your specific project needs.
           </p>
           <button className="bg-white text-purple-700 font-bold py-4 px-10 rounded-full shadow-lg hover:bg-purple-100 hover:text-purple-900 transition-all duration-300 transform hover:scale-105">
-            Contact PryzenTech
+            Contact PryzenTech 
           </button>
         </section>
 
