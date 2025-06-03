@@ -203,13 +203,12 @@ const ContactUs = () => {
                 >
                   <option value="">Select a service</option>
                   <option>Custom Website Development</option>
-                  <option>E-commerce Solutions</option>
                   <option>Frontend Development</option>
                   <option>Backend Development</option>
                   <option>UI/UX Design</option>
                   <option>Software Maintenance & Support</option>
                   <option>SEO Optimization</option>
-                  <option>Digital Marketing & Advertising</option>
+                  <option>Google Advertising</option>
                 </select>
               </div>
 
