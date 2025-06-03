@@ -5,161 +5,272 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutCompany = () => {
+  // Refs for GSAP animations
   const heroTextRef = useRef(null);
   const heroImageRef = useRef(null);
-  const section2Ref = useRef(null);
-  const section2ImageRef = useRef(null);
+  const servicesHeadingRef = useRef(null);
+  const servicesListRef = useRef(null);
+  const approachHeadingRef = useRef(null);
+  const approachListRef = useRef(null);
+  const approachImageRef = useRef(null);
   const ctaRef = useRef(null);
 
   useEffect(() => {
-    const tl = gsap.timeline({ defaults: { duration: 1.2, ease: 'power3.out' } });
+    // Initial hero section animation
+    const tl = gsap.timeline({ defaults: { duration: 1, ease: 'power3.out' } });
 
-    // Initial animation for the hero section (text and first image)
     tl.fromTo(
       heroTextRef.current,
-      { x: -100, opacity: 0, scale: 0.9 },
-      { x: 0, opacity: 1, scale: 1 }
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1 }
     )
     .fromTo(
       heroImageRef.current,
-      { x: 100, opacity: 0, scale: 0.9 },
-      { x: 0, opacity: 1, scale: 1 },
-      '-=0.8'
+      { scale: 0.8, opacity: 0 },
+      { scale: 1, opacity: 1 },
+      '-=0.6' // Stagger this animation slightly after the text
     );
 
     // Scroll-triggered animations for subsequent sections
-    // Section 2 animation (text and image)
+    // Services section animations
     gsap.fromTo(
-      section2Ref.current,
-      { y: 80, opacity: 0 },
+      servicesHeadingRef.current,
+      { y: 50, opacity: 0 },
       {
         y: 0,
         opacity: 1,
-        duration: 1,
+        duration: 0.8,
         ease: 'power2.out',
         scrollTrigger: {
-          trigger: section2Ref.current,
-          start: 'top 80%', // When top of trigger hits 80% of viewport
-          toggleActions: 'play none none none', // Play animation once
-        }
+          trigger: servicesHeadingRef.current,
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        },
       }
     );
 
     gsap.fromTo(
-      section2ImageRef.current,
-      { scale: 0, opacity: 0 },
+      servicesListRef.current,
+      { y: 50, opacity: 0 },
       {
-        scale: 1,
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: servicesListRef.current,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+
+    // Approach section animations
+    gsap.fromTo(
+      approachHeadingRef.current,
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: approachHeadingRef.current,
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+
+    gsap.fromTo(
+      approachListRef.current,
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: approachListRef.current,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+
+    gsap.fromTo(
+      approachImageRef.current,
+      { x: -50, opacity: 0 },
+      {
+        x: 0,
         opacity: 1,
         duration: 1,
         ease: 'back.out(1.7)',
         scrollTrigger: {
-          trigger: section2ImageRef.current,
+          trigger: approachImageRef.current,
           start: 'top 85%',
           toggleActions: 'play none none none',
-        }
+        },
       }
     );
 
     // CTA section animation
     gsap.fromTo(
       ctaRef.current,
-      { y: 50, opacity: 0 },
+      { y: 50, opacity: 0, scale: 0.9 },
       {
         y: 0,
         opacity: 1,
+        scale: 1,
         duration: 1,
         ease: 'power2.out',
         scrollTrigger: {
           trigger: ctaRef.current,
-          start: 'top 90%', // Adjust as needed
+          start: 'top 90%',
           toggleActions: 'play none none none',
-        }
+        },
       }
     );
 
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-purple-50 to-purple-200 min-h-screen py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto rounded-xl shadow-2xl overflow-hidden bg-white">
-        {/* Hero Section for PryzenTech Web Services */}
-        <div className="relative p-8 md:p-12 lg:p-16 text-center bg-purple-700 text-white">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
-            PryzenTech: Your Web Services Partner
-          </h1>
-          <p className="text-lg sm:text-xl opacity-90 max-w-3xl mx-auto">
-            Delivering comprehensive web solutions to elevate your digital presence and drive business growth.
-          </p>
-        </div>
+    <div className="bg-gradient-to-br from-indigo-50 to-purple-100 min-h-screen font-sans">
+      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
 
-        {/* Content Section 1: Our Expertise */}
-        <div className="flex flex-col md:flex-row items-center gap-10 p-8 md:p-12 lg:p-16">
-          <div ref={heroTextRef} className="md:w-1/2 text-gray-800">
-            <h2 className="text-3xl sm:text-4xl font-bold text-purple-800 mb-6">
+        {/* Hero Section: Modern & Engaging */}
+        <section className="relative overflow-hidden bg-gradient-to-r from-purple-700 to-indigo-800 text-white rounded-3xl shadow-xl mb-16 p-8 md:p-16 lg:p-20 flex flex-col md:flex-row items-center justify-between gap-10">
+          <div ref={heroTextRef} className="md:w-3/5 text-center md:text-left z-10">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight tracking-tight">
+              PryzenTech: Innovating Your Digital Future
+            </h1>
+            <p className="text-lg sm:text-xl opacity-95 max-w-2xl mx-auto md:mx-0">
+              Empowering businesses with cutting-edge web services that drive growth, enhance user experience, and define digital excellence.
+            </p>
+            <button className="mt-8 bg-white text-purple-800 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-100 hover:text-indigo-900 transition-all duration-300 transform hover:-translate-y-1">
+              Discover Our Solutions
+            </button>
+          </div>
+          <div ref={heroImageRef} className="md:w-2/5 flex justify-center md:justify-end z-10">
+            <img
+              src="https://images.unsplash.com/photo-1517430030588-bc1c70e7e174?fit=crop&w=600&h=400"
+              alt="PryzenTech Innovation"
+              className="w-full max-w-sm rounded-lg shadow-2xl border-4 border-white transform rotate-3 hover:rotate-0 transition-transform duration-500 ease-in-out"
+              onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/6D28D9/ffffff?text=Digital+Innovation"; }}
+            />
+          </div>
+          {/* Subtle background graphics */}
+          <div className="absolute inset-0 z-0 opacity-10">
+            <svg className="w-full h-full" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <circle cx="20" cy="80" r="15" />
+              <circle cx="80" cy="20" r="15" />
+              <rect x="0" y="50" width="100" height="2" />
+            </svg>
+          </div>
+        </section>
+
+        {/* Section: Our Expertise - Enhanced Grid Layout */}
+        <section className="bg-white rounded-2xl shadow-lg p-8 md:p-12 lg:p-16 mb-16">
+          <div className="text-center mb-12">
+            <h2 ref={servicesHeadingRef} className="text-4xl font-extrabold text-purple-800 mb-4">
               Full-Spectrum Web Solutions for Every Need
             </h2>
-            <p className="mb-4 text-lg leading-relaxed">
-              At PryzenTech, we specialize in a wide array of web services designed to meet the diverse needs of modern businesses. From crafting responsive and engaging websites to developing robust backend systems and optimizing your online visibility, we are your one-stop solution for digital success.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              At PryzenTech, we offer a comprehensive suite of web services designed to elevate your digital presence and drive business success.
             </p>
-            <p className="text-purple-900 font-semibold mb-2">Our Key Web Services Include:</p>
-            <ul className="list-disc list-inside text-lg text-gray-700 space-y-2">
-              <li>Custom Website Design & Development</li>
-              <li>Frontend & Backend Development</li>
-              <li>E-commerce Solutions</li>
-              <li>UI/UX Design & Prototyping</li>
-              <li>SEO Optimization & Digital Advertising</li>
-              <li>Software Maintenance & Support</li>
-            </ul>
           </div>
 
-          <div ref={heroImageRef} className="md:w-1/2 flex justify-center items-center">
-            <img
-              src="https://placehold.co/600x400/8B5CF6/ffffff?text=Web+Services"
-              alt="PryzenTech Web Services Illustration"
-              className="w-full h-auto rounded-lg shadow-xl border border-purple-300 transform hover:scale-105 transition-transform duration-300 ease-in-out"
-              onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/8B5CF6/ffffff?text=Web+Services+Image"; }} // Fallback
-            />
+          <div ref={servicesListRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Service Item 1 */}
+            <div className="bg-purple-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+              <div className="text-purple-600 text-5xl mb-4">🌐</div> {/* Icon */}
+              <h4 className="text-2xl font-bold text-purple-700 mb-2">Custom Website Design & Development</h4>
+              <p className="text-gray-700">Crafting responsive, visually stunning, and highly functional websites tailored to your brand.</p>
+            </div>
+            {/* Service Item 2 */}
+            <div className="bg-purple-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+              <div className="text-purple-600 text-5xl mb-4">💻</div>
+              <h4 className="text-2xl font-bold text-purple-700 mb-2">Frontend & Backend Development</h4>
+              <p className="text-gray-700">Building robust and scalable architectures for seamless user experiences and powerful data management.</p>
+            </div>
+            {/* Service Item 3 */}
+            <div className="bg-purple-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+              <div className="text-purple-600 text-5xl mb-4">🛒</div>
+              <h4 className="text-2xl font-bold text-purple-700 mb-2">E-commerce Solutions</h4>
+              <p className="text-gray-700">Developing secure, user-friendly online stores that convert visitors into loyal customers.</p>
+            </div>
+            {/* Service Item 4 */}
+            <div className="bg-purple-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+              <div className="text-purple-600 text-5xl mb-4">🎨</div>
+              <h4 className="text-2xl font-bold text-purple-700 mb-2">UI/UX Design & Prototyping</h4>
+              <p className="text-gray-700">Designing intuitive interfaces and engaging user experiences for maximum impact.</p>
+            </div>
+            {/* Service Item 5 */}
+            <div className="bg-purple-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+              <div className="text-purple-600 text-5xl mb-4">📈</div>
+              <h4 className="text-2xl font-bold text-purple-700 mb-2">SEO & Digital Marketing</h4>
+              <p className="text-gray-700">Improving your online visibility and driving targeted traffic through strategic optimization.</p>
+            </div>
+            {/* Service Item 6 */}
+            <div className="bg-purple-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+              <div className="text-purple-600 text-5xl mb-4">🛠️</div>
+              <h4 className="text-2xl font-bold text-purple-700 mb-2">Software Maintenance & Support</h4>
+              <p className="text-gray-700">Ensuring your digital assets run smoothly with ongoing maintenance and dedicated support.</p>
+            </div>
           </div>
-        </div>
+        </section>
 
-        {/* Content Section 2: Our Approach and Benefits */}
-        <div ref={section2Ref} className="flex flex-col md:flex-row items-center gap-10 p-8 md:p-12 lg:p-16 bg-purple-50 rounded-b-xl">
-          <div ref={section2ImageRef} className="md:w-1/2 flex justify-center items-center">
+        {/* Section: Our Approach - Visually Distinct */}
+        <section className="flex flex-col md:flex-row items-center gap-12 bg-indigo-50 rounded-2xl shadow-lg p-8 md:p-12 lg:p-16 mb-16">
+          <div ref={approachImageRef} className="md:w-1/2 flex justify-center items-center order-2 md:order-1">
             <img
-              src="https://placehold.co/600x400/8B5CF6/ffffff?text=Digital+Transformation"
-              alt="Digital Transformation Illustration"
-              className="w-full h-auto rounded-lg shadow-xl border border-purple-300 transform hover:scale-105 transition-transform duration-300 ease-in-out"
-              onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/8B5CF6/ffffff?text=Digital+Trans+Image"; }} // Fallback
+              src="https://images.unsplash.com/photo-1549692520-acc6669e2f69?fit=crop&w=600&h=400"
+              alt="Digital Transformation"
+              className="w-full max-w-md h-auto rounded-xl shadow-2xl border-4 border-indigo-200 transform -rotate-3 hover:rotate-0 transition-transform duration-500 ease-in-out"
+              onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/4F46E5/ffffff?text=Our+Approach+Image"; }}
             />
           </div>
-          <div className="md:w-1/2 text-gray-800">
-            <h3 className="text-3xl sm:text-4xl font-bold text-purple-800 mb-6">
-              Driving Your Digital Transformation
+          <div className="md:w-1/2 text-gray-800 order-1 md:order-2">
+            <h3 ref={approachHeadingRef} className="text-4xl font-extrabold text-indigo-800 mb-6 leading-tight">
+              Our Collaborative Approach to Digital Transformation
             </h3>
-            <p className="mb-4 text-lg leading-relaxed">
+            <p className="mb-6 text-lg leading-relaxed text-gray-700">
               We partner with businesses to navigate the complexities of the digital world. Our approach is collaborative, agile, and results-oriented, ensuring that every solution we deliver is not just technically sound but also strategically aligned with your long-term objectives. We focus on creating measurable impact.
             </p>
-            <ul className="list-disc list-inside text-lg text-gray-700 space-y-2">
-              <li>Client-Centric Development Process</li>
-              <li>Focus on Performance, Security & Scalability</li>
-              <li>Transparent Communication & Reporting</li>
-              <li>Post-Launch Support & Continuous Improvement</li>
-              <li>Innovative Solutions for Competitive Advantage</li>
+            <ul ref={approachListRef} className="space-y-4 text-lg text-gray-700">
+              <li className="flex items-start">
+                <span className="text-indigo-600 text-2xl mr-3">✔️</span>
+                <p><strong className="text-indigo-800">Client-Centric Development:</strong> Your vision is at the core of our process.</p>
+              </li>
+              <li className="flex items-start">
+                <span className="text-indigo-600 text-2xl mr-3">🚀</span>
+                <p><strong className="text-indigo-800">Performance & Security First:</strong> Building robust solutions that are fast, secure, and scalable.</p>
+              </li>
+              <li className="flex items-start">
+                <span className="text-indigo-600 text-2xl mr-3">🤝</span>
+                <p><strong className="text-indigo-800">Transparent Communication:</strong> Keeping you informed every step of the way.</p>
+              </li>
+              <li className="flex items-start">
+                <span className="text-indigo-600 text-2xl mr-3">💡</span>
+                <p><strong className="text-indigo-800">Innovative Solutions:</strong> Leveraging the latest tech to give you a competitive edge.</p>
+              </li>
             </ul>
           </div>
-        </div>
+        </section>
 
-        {/* Call to Action or Additional Info */}
-        <div ref={ctaRef} className="bg-purple-600 text-white p-8 md:p-12 lg:p-16 text-center">
-          <h3 className="text-2xl sm:text-3xl font-bold mb-4">Ready to elevate your online presence?</h3>
-          <p className="text-lg mb-6">
-            Partner with PryzenTech for expert web services that deliver real results.
+        {/* Call to Action: Prominent & Action-Oriented */}
+        <section ref={ctaRef} className="bg-gradient-to-r from-purple-600 to-indigo-700 text-white rounded-2xl shadow-xl p-10 md:p-16 text-center">
+          <h3 className="text-3xl sm:text-4xl font-extrabold mb-4 leading-tight">
+            Ready to Transform Your Digital Presence?
+          </h3>
+          <p className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto opacity-95">
+            Let's discuss how PryzenTech can help you achieve your business goals with expert web services.
           </p>
-          <button className="bg-white text-purple-700 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-purple-100 hover:text-purple-900 transition-colors duration-300">
-            Schedule a Free Consultation
+          <button className="bg-white text-purple-700 font-bold py-4 px-10 rounded-full shadow-lg hover:bg-purple-100 hover:text-purple-900 transition-all duration-300 transform hover:scale-105">
+            Schedule Your Free Consultation
           </button>
-        </div>
+        </section>
+
       </div>
     </div>
   );
