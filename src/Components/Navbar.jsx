@@ -37,12 +37,12 @@ const itSolutions = [
 const company = [
   { name: 'About', path: '/company/aboutcompany', icon: <MdInfo /> },
   { name: 'Mission, Vision and Values', path: '/company/vision-mission', icon: <FaLightbulb /> },
-  { name: 'Awards', path: '/company/awards', icon: <FaAward /> },
+  // { name: 'Awards', path: '/company/awards', icon: <FaAward /> },
   { name: 'Leadership Team', path: '/company/team', icon: <MdSupervisorAccount /> },
-  { name: 'Media', path: '/company/media', icon: <MdOutlinePhotoLibrary /> },
-  { name: 'Careers', path: '/company/careers', icon: <FaBriefcase /> },
+  // { name: 'Media', path: '/company/media', icon: <MdOutlinePhotoLibrary /> },
+  // { name: 'Careers', path: '/company/careers', icon: <FaBriefcase /> },
   { name: 'Why Choose Us', path: '/company/why-choose-us', icon: <FaUsers /> },
-  { name: 'Locations', path: '/company/locations', icon: <FaMapMarkerAlt /> },
+  // { name: 'Locations', path: '/company/locations', icon: <FaMapMarkerAlt /> },
   { name: 'FAQ', path: '/company/faq', icon: <FaQuestionCircle /> },
 ];
 
