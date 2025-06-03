@@ -46,7 +46,7 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <div className=" text-slate-50 py-20 px-4 shadow-lg rounded-lg">
+    <div className="border-t border-white bg-gradient-to-r from-purple-100 to-purple-300  text-white   py-20 px-4 shadow-lg rounded-lg">
       {/* Custom styles for Swiper pagination and navigation specific to this component */}
       <style>
         {`
@@ -59,7 +59,7 @@ const TestimonialsSection = () => {
           /* Pagination bullets */
           .swiper-pagination-testimonials {
             position: absolute;
-            bottom: 20px !important; /* Position bullets below the slides */
+            // bottom: 20px !important; /* Position bullets below the slides */
             width: 100%;
             display: flex;
             justify-content: center;
@@ -89,7 +89,7 @@ const TestimonialsSection = () => {
           /* Navigation arrows */
           .swiper-button-next-testimonials,
           .swiper-button-prev-testimonials {
-            color: #a78bfa !important; /* Purple color for navigation arrows */
+            // color: #a78bfa !important; /* Purple color for navigation arrows */
             transition: color 0.3s ease, background-color 0.3s ease;
             top: 50%; /* Vertically center */
             transform: translateY(-50%); /* Adjust for perfect centering */
@@ -138,32 +138,27 @@ const TestimonialsSection = () => {
         `}
       </style>
 
-      <div className="max-w-6xl mx-auto w-full">
-        <h3 className="text-4xl font-bold text-center mb-12 text-purple-400">What Our Clients Say</h3>
+      <div className=" mx-auto w-full ">
+        <h3 className="text-4xl text-purple-800 font-bold text-center mb-12 ">What Our Clients Say</h3>
         <Swiper
           spaceBetween={30}
           slidesPerView={1}
           autoplay={{
-            delay: 4000, // Auto-swipe every 4 seconds
+            delay: 3000, // Auto-swipe every 3 seconds
             disableOnInteraction: false, // Continue autoplay after user interaction
           }}
           loop={true} // Continuous circular motion
-          pagination={{
-            clickable: true,
-            el: '.swiper-pagination-testimonials', // Custom pagination container
-            bulletClass: 'swiper-pagination-bullet', // Apply custom bullet class
-            bulletActiveClass: 'swiper-pagination-bullet-active', // Apply custom active bullet class
-          }}
-          navigation={{
-            nextEl: '.swiper-button-next-testimonials',
-            prevEl: '.swiper-button-prev-testimonials',
-          }}
+        //   pagination={{
+        //     clickable: true,
+        //  }}
+        //  navigation={true}
+          
           modules={[Autoplay, Pagination, Navigation]}
-          className="mySwiperTestimonials" // Unique class for this Swiper instance
+          className="mySwiper" // Unique class for this Swiper instance
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-purple-800 p-8 rounded-lg shadow-xl border border-purple-700 flex flex-col items-center text-center max-w-2xl mx-auto h-full justify-between">
+              <div className="bg-gradient-to-r from-purple-600 to-purple-900 p-8 rounded-lg shadow-xl border border-purple-700 flex flex-col items-center text-center max-w-2xl mx-auto h-full justify-between">
                 <img
                   src={testimonial.avatar}
                   alt={`${testimonial.author}'s avatar`}
@@ -181,11 +176,6 @@ const TestimonialsSection = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        {/* Custom pagination and navigation elements must be outside the Swiper component itself
-            if using custom `el` for pagination/navigation. They should be siblings to the Swiper. */}
-        <div className="swiper-pagination-testimonials"></div>
-        <div className="swiper-button-prev-testimonials"></div>
-        <div className="swiper-button-next-testimonials"></div>
       </div>
     </div>
   );

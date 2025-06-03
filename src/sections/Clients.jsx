@@ -74,7 +74,7 @@ const Clients = () => {
         </div>
 
         {/* Optional: Testimonials section */}
-        <TestimonialsSection/>
+        {/* <TestimonialsSection/> */}
       </div>
     </div>
   );

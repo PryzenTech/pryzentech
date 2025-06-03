@@ -25,6 +25,7 @@ import Clients from "../sections/Clients";
 import OurValues from "../sections/OurValues";
 import OurCompany from "../sections/OurCompany";
 import { useNavigate } from 'react-router-dom';
+import TestimonialsSection from "../sections/TestimonialsSection";
 
 const HomePage = () => {
     const navigate = useNavigate();
@@ -39,6 +40,7 @@ const HomePage = () => {
       <Services />
       <OurValues />
       <Clients />
+      <TestimonialsSection/>
       <div className="border-t border-white bg-gradient-to-r from-purple-100 to-purple-300  relative z-10 py-20 px-4  shadow-lg flex flex-col items-center justify-center gap-2">
         <p>Let’s get started</p>
         <p>
