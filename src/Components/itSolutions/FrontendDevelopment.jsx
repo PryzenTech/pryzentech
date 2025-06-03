@@ -4,12 +4,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import frontendimg from '../../assets/WEBdesign.jpeg';
 import frontendimg2 from '../../assets/Webdesign2.jpeg';
 import { useNavigate } from 'react-router-dom';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const FrontendDevelopment = () => {
   const navigate = useNavigate();
-  
-  const headingRef = useRef(null);       // new ref for h1 heading
+
+  const headingRef = useRef(null);
   const heroTextRef = useRef(null);
   const heroImageRef = useRef(null);
   const section2Ref = useRef(null);
@@ -25,41 +26,42 @@ const FrontendDevelopment = () => {
       { y: -100, opacity: 0 },
       { y: 0, opacity: 1 }
     )
-    // After h1 animation completes, animate heroText and paragraph simultaneously
-    .fromTo(
-      heroTextRef.current,
-      { x: -100, opacity: 0, scale: 0.9 },
-      { x: 0, opacity: 1, scale: 1 },
-      ">") // start exactly after previous animation ends
-    // Animate paragraph inside heroTextRef with grow (scale) effect at the same time
-    .fromTo(
-      heroTextRef.current.querySelector('p'),
-      { scale: 0.9, opacity: 0 },
-      { scale: 1, opacity: 1, duration: 1.2, ease: 'power2.out' },
-      "<"
-    )
-    // Animate each li inside heroTextRef with stagger, starting shortly after heroText starts
-    .fromTo(
-      heroTextRef.current.querySelectorAll('.list-item'),
-      { y: -20, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.6,
-        ease: 'power2.out',
-        stagger: 0.15,
-      },
-      "<+=0.3" // start 0.3s after heroText animation starts
-    )
-    // Animate hero image overlapping above animations
-    .fromTo(
-      heroImageRef.current,
-      { x: 100, opacity: 0, scale: 0.9 },
-      { x: 0, opacity: 1, scale: 1, duration: 1.2 },
-      "-=1.2" // overlap with ul and paragraph animation start
-    );
+      // Animate heroText div (and nested p)
+      .fromTo(
+        heroTextRef.current,
+        { x: -100, opacity: 0, scale: 0.9 },
+        { x: 0, opacity: 1, scale: 1 },
+        ">"
+      )
+      // Animate paragraph inside heroTextRef with grow effect
+      .fromTo(
+        heroTextRef.current.querySelector('p'),
+        { scale: 0.9, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 1.2, ease: 'power2.out' },
+        "<"
+      )
+      // Animate list items
+      .fromTo(
+        heroTextRef.current.querySelectorAll('.list-item'),
+        { y: -20, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          ease: 'power2.out',
+          stagger: 0.15,
+        },
+        "<+=0.3"
+      )
+      // Animate hero image
+      .fromTo(
+        heroImageRef.current,
+        { x: 100, opacity: 0, scale: 0.9 },
+        { x: 0, opacity: 1, scale: 1, duration: 1.2 },
+        "-=1.2"
+      );
 
-    // Section 2 text animation
+    // Section 2 text
     gsap.fromTo(
       section2Ref.current,
       { y: 80, opacity: 0 },
@@ -72,11 +74,11 @@ const FrontendDevelopment = () => {
           trigger: section2Ref.current,
           start: 'top 80%',
           toggleActions: 'play none none none',
-        }
+        },
       }
     );
 
-    // Section 2 image animation
+    // Section 2 image
     gsap.fromTo(
       section2ImageRef.current,
       { scale: 0, opacity: 0 },
@@ -89,11 +91,11 @@ const FrontendDevelopment = () => {
           trigger: section2ImageRef.current,
           start: 'top 85%',
           toggleActions: 'play none none none',
-        }
+        },
       }
     );
 
-    // CTA animation
+    // CTA
     gsap.fromTo(
       ctaRef.current,
       { y: 50, opacity: 0 },
@@ -106,30 +108,30 @@ const FrontendDevelopment = () => {
           trigger: ctaRef.current,
           start: 'top 90%',
           toggleActions: 'play none none none',
-        }
+        },
       }
     );
-
   }, []);
 
   return (
     <div className="bg-gradient-to-br from-purple-50 to-purple-200 min-h-screen py-2 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[90vw] mx-auto rounded-xl shadow-2xl overflow-hidden bg-white">
+
         {/* Hero Section */}
         <div className="relative p-4 md:p-6 lg:p-8 text-center bg-gradient-to-b from-purple-950 to-purple-300 text-white">
-          {/* Heading ref added */}
           <h1 ref={headingRef} className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
             Frontend Development
           </h1>
-          {/* p tag pr grow up animation laga de  */}
-          <p className="text-lg sm:text-xl opacity-90 max-w-3xl mx-auto">
-            Crafting stunning, interactive, and user-friendly web interfaces that captivate your audience.
-          </p>
+          <div ref={heroTextRef}>
+            <p className="text-lg sm:text-xl opacity-90 max-w-3xl mx-auto">
+              Crafting stunning, interactive, and user-friendly web interfaces that captivate your audience.
+            </p>
+          </div>
         </div>
 
         {/* Content Section 1 */}
         <div className="flex flex-col md:flex-row items-center gap-10 p-8 md:p-12 lg:p-16">
-          <div ref={heroTextRef} className="md:w-1/2 text-gray-800">
+          <div className="md:w-1/2 text-gray-800" ref={heroTextRef}>
             <h2 className="text-3xl sm:text-4xl font-bold text-purple-800 mb-6">
               Bringing Your Digital Vision to Life
             </h2>
@@ -152,7 +154,10 @@ const FrontendDevelopment = () => {
               src={frontendimg}
               alt="Frontend Development Illustration"
               className="w-full h-auto rounded-lg shadow-xl border border-purple-300 transform hover:scale-105 transition-transform duration-300 ease-in-out"
-              onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/8B5CF6/ffffff?text=Frontend+Image"; }}
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = "https://placehold.co/600x400/8B5CF6/ffffff?text=Frontend+Image";
+              }}
             />
           </div>
         </div>
@@ -164,7 +169,10 @@ const FrontendDevelopment = () => {
               src={frontendimg2}
               alt="Frontend Development Process Illustration"
               className="w-full h-auto rounded-lg shadow-xl border border-purple-300 transform hover:scale-105 transition-transform duration-300 ease-in-out"
-              onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/8B5CF6/ffffff?text=Frontend+Process+Image"; }}
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = "https://placehold.co/600x400/8B5CF6/ffffff?text=Frontend+Process+Image";
+              }}
             />
           </div>
           <div className="md:w-1/2 text-gray-800">
@@ -190,8 +198,10 @@ const FrontendDevelopment = () => {
           <p className="text-lg mb-6">
             Let's build an interactive and visually stunning interface that leaves a lasting impression.
           </p>
-          <button onClick={() => { navigate('/contactus') }}
-            className="bg-white text-purple-700 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-purple-100 hover:text-purple-900 transition-colors duration-300">
+          <button
+            onClick={() => navigate('/contactus')}
+            className="bg-white text-purple-700 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-purple-100 hover:text-purple-900 transition-colors duration-300"
+          >
             Discuss Your Frontend Project
           </button>
         </div>
