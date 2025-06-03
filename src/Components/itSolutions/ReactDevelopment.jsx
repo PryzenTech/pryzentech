@@ -82,7 +82,7 @@ const ReactDevelopment = () => {
   }, []); // Empty dependency array means this effect runs once on mount
 
   return (
-    <div className="bg-gradient-to-br from-purple-50 to-purple-200 min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-br from-purple-50 to-purple-200 min-h-screen py-2 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto rounded-xl shadow-2xl overflow-hidden bg-white">
         {/* Hero Section for React Development */}
         <div className="relative p-4 md:p-6 lg:p-8 text-center bg-purple-700 text-white">
