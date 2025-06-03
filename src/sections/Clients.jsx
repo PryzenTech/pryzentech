@@ -5,10 +5,10 @@ const Clients = () => {
   return (
     // Added relative positioning and z-index to ensure it layers above the fixed 3D background.
     // A background color (bg-white or bg-gray-50) is crucial for readability over the animated sphere.
-    <div className="border-t text-white border-white bg-gradient-to-r from-purple-900 to-purple-400  relative z-10 py-20 px-4  shadow-lg">
+    <div className=" border-white bg-gradient-to-r from-purple-100 to-purple-300  relative z-13 py-20 px-4  shadow-lg rounded-lg">
       <div className="max-w-[90vw] mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-10 ">Our Valued Clients</h2>
-        <p className="text-center text-lg text-slate-100 mb-8">
+        <h2 className="text-4xl font-bold text-center mb-10 text-purple-800 ">Our Valued Clients</h2>
+        <p className="text-center text-lg text-white mb-8">
           We are proud to have partnered with a diverse range of businesses, helping them achieve their digital goals.
         </p>
         <div className="grid  p-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-items-center">
@@ -73,8 +73,7 @@ const Clients = () => {
           </div>
         </div>
 
-        {/* Optional: Testimonials section */}
-        {/* <TestimonialsSection/> */}
+
       </div>
     </div>
   );

@@ -90,7 +90,7 @@ const OurCompany = () => {
   ];
 
   return (
-    <div className="border-t border-white bg-gradient-to-r from-purple-100 to-purple-300  relative z-10   py-16 px-4 flex flex-col items-center rounded-lg shadow-lg">
+    <div className=" bg-gradient-to-r from-purple-100 to-purple-300  relative z-15 py-16 px-4 flex flex-col items-center rounded-lg shadow-lg ">
       
 {/* Custom styles for Swiper pagination and navigation */}
       <style>

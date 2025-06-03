@@ -4,7 +4,7 @@ const OurValues = () => {
   return (
     // Added relative positioning and z-index to ensure it layers above the fixed 3D background.
     // A background color (bg-white) is crucial for readability over the animated sphere.
-    <div className="border-t border-white bg-gradient-to-r from-purple-100 to-purple-300  relative z-10 py-20 px-4  shadow-lg">
+    <div className=" bg-gradient-to-r from-purple-100 to-purple-300  relative py-20 px-4  shadow-lg rounded-lg  z-14 ">
       <div className="max-w-[90vw] mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12 text-purple-800">Our Core Values</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

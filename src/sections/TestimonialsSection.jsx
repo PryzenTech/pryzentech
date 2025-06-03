@@ -46,7 +46,7 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <div className="border-t border-white bg-gradient-to-r from-purple-100 to-purple-300  text-white   py-20 px-4 shadow-lg rounded-lg">
+    <div className=" bg-gradient-to-r from-purple-100 to-purple-300  text-white   py-20 px-4 rounded-lg shadow-lg z-11 ">
       {/* Custom styles for Swiper pagination and navigation specific to this component */}
       <style>
         {`
@@ -159,12 +159,12 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
               <div className="bg-gradient-to-r from-purple-600 to-purple-900 p-8 rounded-lg shadow-xl border border-purple-700 flex flex-col items-center text-center max-w-2xl mx-auto h-full justify-between">
-                <img
+                {/* <img
                   src={testimonial.avatar}
                   alt={`${testimonial.author}'s avatar`}
                   className="w-24 h-24 rounded-full object-cover mb-6 border-4 border-purple-500"
                   onError={(e) => { e.target.onerror = null; e.target.src = `https://placehold.co/100x100/A78BFA/ffffff?text=${testimonial.author.split(' ').map(n => n[0]).join('')}`; }} // Fallback for image loading errors
-                />
+                /> */}
                 <p className="italic text-purple-100 mb-6 flex-grow text-lg leading-relaxed">
                   "{testimonial.quote}"
                 </p>
