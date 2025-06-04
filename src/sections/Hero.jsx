@@ -83,7 +83,7 @@ const Hero = () => {
             {text}
             <span className="animate-pulse">|</span>
           </div>
-          <p className="text-gray-800 text-lg paraFont-600">
+          <p className="text-gray-800 text-lg ">
             Your all-in-one partner for premium digital solutions. From startups
             to enterprises, we help you build and scale a powerful online
             presence.
