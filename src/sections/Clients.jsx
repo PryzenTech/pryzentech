@@ -6,7 +6,7 @@ const Clients = () => {
     // Added relative positioning and z-index to ensure it layers above the fixed 3D background.
     // A background color (bg-white or bg-gray-50) is crucial for readability over the animated sphere.
     <div className=" border-white bg-gradient-to-r from-purple-100 to-purple-300  relative z-13 py-20 px-4  shadow-lg rounded-lg">
-      <div className="max-w-[90vw] mx-auto">
+      <div className="max-w-[90vw] paraFont-900 mx-auto">
         <h2 className="text-4xl font-bold text-center mb-10 text-purple-800 ">Our Valued Clients</h2>
         <p className="text-center text-lg text-white mb-8">
           We are proud to have partnered with a diverse range of businesses, helping them achieve their digital goals.

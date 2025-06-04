@@ -139,7 +139,7 @@ const TestimonialsSection = () => {
       </style>
 
       <div className=" mx-auto w-full ">
-        <h3 className="text-4xl text-purple-800 font-bold text-center mb-12 ">What Our Clients Say</h3>
+        <h3 className="paraFont-900 text-4xl text-purple-800 font-bold text-center mb-12 ">What Our Clients Say</h3>
         <Swiper
           spaceBetween={30}
           slidesPerView={1}
@@ -165,7 +165,7 @@ const TestimonialsSection = () => {
                   className="w-24 h-24 rounded-full object-cover mb-6 border-4 border-purple-500"
                   onError={(e) => { e.target.onerror = null; e.target.src = `https://placehold.co/100x100/A78BFA/ffffff?text=${testimonial.author.split(' ').map(n => n[0]).join('')}`; }} // Fallback for image loading errors
                 /> */}
-                <p className="italic text-purple-100 mb-6 flex-grow text-lg leading-relaxed">
+                <p className="bona-italic text-purple-100 mb-6 flex-grow text-lg leading-relaxed">
                   "{testimonial.quote}"
                 </p>
                 <div className="text-purple-300 font-semibold text-base">

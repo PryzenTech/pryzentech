@@ -80,7 +80,7 @@ useEffect(() => {
     <div className="bg-gradient-to-br from-purple-50 to-purple-200 min-h-screen py-2 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[90vw] mx-auto rounded-xl shadow-2xl overflow-hidden bg-white">
         {/* Hero Section for Backend Development */}
-        <div className="relative p-4 md:p-6 lg:p-8 text-center bg-gradient-to-b from-purple-950 to-purple-300 text-white">
+        <div className="paraFont-900 relative p-4 md:p-6 lg:p-8 text-center bg-gradient-to-b from-purple-950 to-purple-300 text-white">
           <h1
             ref={headingRef}
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight"
@@ -98,7 +98,7 @@ useEffect(() => {
 
         {/* Content Section 1 */}
         {/* section 1 load hona chahiye jb heading ref ka contant load hora ho */}
-        <div className="flex flex-col md:flex-row items-center gap-10 p-8 md:p-12 lg:p-16">
+        <div className="noto-serif flex flex-col md:flex-row items-center gap-10 p-8 md:p-12 lg:p-16">
           <div ref={heroTextRef} className="md:w-1/2 text-gray-800">
           {/* ye left se aana chahiye  */}
             <div className="">
@@ -147,7 +147,7 @@ useEffect(() => {
         {/* Section 2 */}
         <div
           ref={section2Ref}
-          className="flex flex-col md:flex-row items-center gap-10 p-8 md:p-12 lg:p-16 bg-purple-50 rounded-b-xl"
+          className="noto-serif flex flex-col md:flex-row items-center gap-10 p-8 md:p-12 lg:p-16 bg-purple-50 rounded-b-xl"
         >
           <div
             ref={section2ImageRef}
@@ -189,7 +189,7 @@ useEffect(() => {
         {/* CTA */}
         <div
           ref={ctaRef}
-          className="bg-purple-600 text-white p-8 md:p-12 lg:p-16 text-center"
+          className="paraFont-900 bg-gradient-to-t from-purple-950 to-purple-300 text-white p-8 md:p-12 lg:p-16 text-center"
         >
           <h3 className="text-2xl sm:text-3xl font-bold mb-4">
             Need a powerful backend for your app?

@@ -98,7 +98,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-gradient-to-r from-purple-900 to-purple-400 text-white shadow-md fixed top-0 w-full z-50">
+    <nav className="noto-serif bg-gradient-to-r from-purple-900 to-purple-400 text-white shadow-md fixed top-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
         {/* Logo */}
         <div className="text-2xl font-bold overflow-hidden">

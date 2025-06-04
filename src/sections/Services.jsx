@@ -177,7 +177,7 @@ const OurCompany = () => {
         `}
       </style>
       {/* Our Services Section with Swiper */}
-      <div className="max-w-[90vw]  border-black  mx-auto w-full mt-10 p-4">
+      <div className=" paraFont-900 max-w-[90vw]  border-black  mx-auto w-full mt-10 p-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-purple-700">Our Services</h2>
         <Swiper 
           spaceBetween={30}
@@ -215,7 +215,7 @@ const OurCompany = () => {
           ))}
         </Swiper>
       </div>
-      <div className='mt-10 text-lg'>
+      <div className='bona-regular mt-10 text-lg'>
         Explore Our Services and Give us opportunity to solve your Problems
       </div>
 

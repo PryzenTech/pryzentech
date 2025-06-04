@@ -2,7 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useNavigate } from 'react-router-dom';
-
+import img1 from '../../assets/About1.jpg'
+import img2 from '../../assets/About2.jpg'
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutCompany = () => {
@@ -137,11 +138,11 @@ const AboutCompany = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-indigo-50 to-purple-100 min-h-screen font-sans">
+    <div className="bg-gradient-to-br from-purple-50 to-purple-100 min-h-screen font-sans">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
 
         {/* Hero Section: Modern & Engaging */}
-        <section className="relative overflow-hidden bg-gradient-to-r from-purple-700 to-indigo-800 text-white rounded-3xl shadow-xl mb-16 p-8 md:p-16 lg:p-20 flex flex-col md:flex-row items-center justify-between gap-10">
+        <section className=" paraFont-600 relative overflow-hidden bg-gradient-to-r from-purple-700 to-purple-800 text-white rounded-3xl shadow-xl mb-16 p-8 md:p-16 lg:p-20 flex flex-col md:flex-row items-center justify-between gap-10">
           <div ref={heroTextRef} className="md:w-3/5 text-center md:text-left z-10">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight tracking-tight">
               PryzenTech: Innovating Your Digital Future
@@ -149,13 +150,13 @@ const AboutCompany = () => {
             <p className="text-lg sm:text-xl opacity-95 max-w-2xl mx-auto md:mx-0">
               Empowering businesses with cutting-edge web services that drive growth, enhance user experience, and define digital excellence.
             </p>
-            <button className="mt-8 bg-white text-purple-800 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-100 hover:text-indigo-900 transition-all duration-300 transform hover:-translate-y-1">
+            <button className="mt-8 bg-white text-purple-800 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-purple-100 hover:text-purple-900 transition-all duration-300 transform hover:-translate-y-1">
               Discover Our Solutions
             </button>
           </div>
           <div ref={heroImageRef} className="md:w-2/5 flex justify-center md:justify-end z-10">
             <img
-              src="https://images.unsplash.com/photo-1517430030588-bc1c70e7e174?fit=crop&w=600&h=400"
+              src={img1}
               alt="PryzenTech Innovation"
               className="w-full max-w-sm rounded-lg shadow-2xl border-4 border-white transform rotate-3 hover:rotate-0 transition-transform duration-500 ease-in-out"
               onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/6D28D9/ffffff?text=Digital+Innovation"; }}
@@ -172,7 +173,7 @@ const AboutCompany = () => {
         </section>
 
         {/* Section: Our Expertise - Enhanced Grid Layout */}
-        <section className="bg-white rounded-2xl shadow-lg p-8 md:p-12 lg:p-16 mb-16">
+        <section className="noto-serif bg-white rounded-2xl shadow-lg p-8 md:p-12 lg:p-16 mb-16">
           <div className="text-center mb-12">
             <h2 ref={servicesHeadingRef} className="text-4xl font-extrabold text-purple-800 mb-4">
               Full-Spectrum Web Solutions for Every Need
@@ -223,17 +224,17 @@ const AboutCompany = () => {
         </section>
 
         {/* Section: Our Approach - Visually Distinct */}
-        <section className="flex flex-col md:flex-row items-center gap-12 bg-indigo-50 rounded-2xl shadow-lg p-8 md:p-12 lg:p-16 mb-16">
+        <section className="noto-serif flex flex-col md:flex-row items-center gap-12 bg-purple-50 rounded-2xl shadow-lg p-8 md:p-12 lg:p-16 mb-16">
           <div ref={approachImageRef} className="md:w-1/2 flex justify-center items-center order-2 md:order-1">
             <img
-              src="https://images.unsplash.com/photo-1549692520-acc6669e2f69?fit=crop&w=600&h=400"
+              src={img2}
               alt="Digital Transformation"
-              className="w-full max-w-md h-auto rounded-xl shadow-2xl border-4 border-indigo-200 transform -rotate-3 hover:rotate-0 transition-transform duration-500 ease-in-out"
+              className="w-full max-w-md h-auto rounded-xl shadow-2xl border-4 border-purple-200 transform -rotate-3 hover:rotate-0 transition-transform duration-500 ease-in-out"
               onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/4F46E5/ffffff?text=Our+Approach+Image"; }}
             />
           </div>
           <div className="md:w-1/2 text-gray-800 order-1 md:order-2">
-            <h3 ref={approachHeadingRef} className="text-4xl font-extrabold text-indigo-800 mb-6 leading-tight">
+            <h3 ref={approachHeadingRef} className="text-4xl font-extrabold text-purple-800 mb-6 leading-tight">
               Our Collaborative Approach to Digital Transformation
             </h3>
             <p className="mb-6 text-lg leading-relaxed text-gray-700">
@@ -241,27 +242,27 @@ const AboutCompany = () => {
             </p>
             <ul ref={approachListRef} className="space-y-4 text-lg text-gray-700">
               <li className="flex items-start">
-                <span className="text-indigo-600 text-2xl mr-3">✔️</span>
-                <p><strong className="text-indigo-800">Client-Centric Development:</strong> Your vision is at the core of our process.</p>
+                <span className="text-purple-600 text-2xl mr-3">✔️</span>
+                <p><strong className="text-purple-800">Client-Centric Development:</strong> Your vision is at the core of our process.</p>
               </li>
               <li className="flex items-start">
-                <span className="text-indigo-600 text-2xl mr-3">🚀</span>
-                <p><strong className="text-indigo-800">Performance & Security First:</strong> Building robust solutions that are fast, secure, and scalable.</p>
+                <span className="text-purple-600 text-2xl mr-3">🚀</span>
+                <p><strong className="text-purple-800">Performance & Security First:</strong> Building robust solutions that are fast, secure, and scalable.</p>
               </li>
               <li className="flex items-start">
-                <span className="text-indigo-600 text-2xl mr-3">🤝</span>
-                <p><strong className="text-indigo-800">Transparent Communication:</strong> Keeping you informed every step of the way.</p>
+                <span className="text-purple-600 text-2xl mr-3">🤝</span>
+                <p><strong className="text-purple-800">Transparent Communication:</strong> Keeping you informed every step of the way.</p>
               </li>
               <li className="flex items-start">
-                <span className="text-indigo-600 text-2xl mr-3">💡</span>
-                <p><strong className="text-indigo-800">Innovative Solutions:</strong> Leveraging the latest tech to give you a competitive edge.</p>
+                <span className="text-purple-600 text-2xl mr-3">💡</span>
+                <p><strong className="text-purple-800">Innovative Solutions:</strong> Leveraging the latest tech to give you a competitive edge.</p>
               </li>
             </ul>
           </div>
         </section>
 
         {/* Call to Action: Prominent & Action-Oriented */}
-        <section ref={ctaRef} className="bg-gradient-to-r from-purple-600 to-indigo-700 text-white rounded-2xl shadow-xl p-10 md:p-16 text-center">
+        <section ref={ctaRef} className="paraFont-900 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-2xl shadow-xl p-10 md:p-16 text-center">
           <h3 className="text-3xl sm:text-4xl font-extrabold mb-4 leading-tight">
             Ready to Transform Your Digital Presence?
           </h3>
