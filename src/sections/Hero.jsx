@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState  } from "react";
 import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
 
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import heroimg from "../assets/heroimg2.png"; // Assuming this path is correct in your project
 import hero1 from "../assets/hero1.mp4"; // Assuming this path is correct in your project
 

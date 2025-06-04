@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Import ScrollTrigger
 import { useNavigate } from 'react-router-dom';
-import React1 from '../../assets/React1.jpg'
+import React1 from '../../assets/React1.png'
 import React2 from '../../assets/React2.webp'
 gsap.registerPlugin(ScrollTrigger); // Register ScrollTrigger
 
