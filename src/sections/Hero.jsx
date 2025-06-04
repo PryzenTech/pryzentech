@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState  } from "react";
+import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
 
 import { useNavigate } from "react-router-dom";
@@ -94,10 +95,13 @@ const Hero = () => {
 
               <button
                 type="button"
-                onClick={() => {
-                  navigate("/contactus");
-                }}
-                className=" hover:scale-110 border rounded-md bg-gradient-to-b from-purple-950 to-purple-400 text-white p-2 px-4 "
+
+                onClick={() =>{
+                  navigate("/contactus")
+                }
+                }
+                className=" hover:scale-110 border rounded-md bg-gradient-to-b from-purple-950 to-purple-400 text-white px-4 py-2 cursor-pointer"
+
               >
                 Contact Us
               </button>
