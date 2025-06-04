@@ -107,7 +107,7 @@ const ReactDevelopment = () => {
               React.js is a leading JavaScript library for building user interfaces, known for its component-based architecture, virtual DOM, and efficient rendering. It allows developers to create complex UIs from small, isolated pieces of code called "components."
             </p>
             <p className="mb-4 text-lg leading-relaxed">
-              At Pryzentech, our expert React developers leverage its robust ecosystem to deliver fast, interactive, and highly maintainable applications. Whether you need a single-page application (SPA), a complex dashboard, or a progressive web app (PWA), React provides the flexibility and performance required.
+              At Pryzen Technologies, our expert React developers leverage its robust ecosystem to deliver fast, interactive, and highly maintainable applications. Whether you need a single-page application (SPA), a complex dashboard, or a progressive web app (PWA), React provides the flexibility and performance required.
             </p>
             <ul className="list-disc list-inside text-lg text-gray-700 space-y-2">
               <li>Component-Based Architecture for Reusability</li>
