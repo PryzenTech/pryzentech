@@ -1,9 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState  } from "react";
+import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
 // import heroimg from "../assets/heroimg2.png"; // Assuming this path is correct in your project
 import hero1 from "../assets/Hero1.mp4"; // Assuming this path is correct in your project
 import { FaPhoneAlt } from "react-icons/fa";
 const Hero = () => {
+  const navigate = useNavigate();
   const textRef = useRef(null);
   const imageRef = useRef(null);
   const typingRef = useRef(null);
@@ -98,10 +100,11 @@ const Hero = () => {
 
               <button
                 type="button"
-                onClick={() => {
-                  navigate("/contactus");
-                }}
-                className=" hover:scale-110 border rounded-md bg-gradient-to-b from-purple-950 to-purple-400 text-white p-2 px- p"
+                onClick={() =>{
+                  navigate("/contactus")
+                }
+                }
+                className=" hover:scale-110 border rounded-md bg-gradient-to-b from-purple-950 to-purple-400 text-white px-4 py-2 cursor-pointer"
               >
                 Contact Us
               </button>
