@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState  } from "react";
+import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
 
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import heroimg from "../assets/heroimg2.png"; // Assuming this path is correct in your project
 import hero1 from "../assets/hero1.mp4"; // Assuming this path is correct in your project
 
@@ -76,9 +77,7 @@ const Hero = () => {
           className="text-xl font-semibold md:w-[47%] ml-[3vw] leading-relaxed min-h-[230px]" // <- fixed height to avoid image shift
         >
           <div
-
             className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 text-purple-800 mr-3 paraFont-900"
-
             ref={typingRef}
           >
             {text}
@@ -92,20 +91,25 @@ const Hero = () => {
 
           <div className="flex mt-10 py-4 items-center gap-10 ">
             <div className=" ">
-              <p className="px-2">Start Your Project </p>
+              <p className="px-1">Start Your Project </p>
 
               <button
                 type="button"
-                onClick={() => {
-                  navigate("/contactus");
-                }}
-                className=" hover:scale-110 border rounded-md bg-gradient-to-b from-purple-950 to-purple-400 text-white p-2 px- p"
+
+                onClick={() =>{
+                  navigate("/contactus")
+                }
+                }
+                className=" hover:scale-110 border rounded-md bg-gradient-to-b from-purple-950 to-purple-400 text-white px-4 py-2 cursor-pointer"
+
               >
                 Contact Us
               </button>
             </div>
             <div className="flex items-center gap-4">
+
               <div className="flex items-center gap-4">
+
               <p className="flex items-center gap-4 text-red-600 cursor-pointer">
                 <FaPhoneAlt />
               
@@ -119,7 +123,9 @@ const Hero = () => {
                   <a href="tel:+918936950459" className="text-purple-800 cursor-pointer hover:text-purple-600 transition-colors duration-200">+91 8936950459</a> <br/>
                 
               </div>
+
             </div>
+
             </div>
           </div>
         </div>
