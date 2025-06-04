@@ -68,11 +68,11 @@ const ChooseUs = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-indigo-50 to-purple-100 min-h-screen font-sans">
+    <div className=" bg-gradient-to-br paraFont-900 from-indigo-50 to-purple-100 min-h-screen font-sans">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
 
         {/* Header Section */}
-        <section className="text-center mb-16">
+        <section className="text-center paraFont-900 mb-16">
           <h1 ref={headingRef} className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-purple-800 mb-6 leading-tight">
             Why Partner with PryzenTech?
           </h1>
@@ -91,7 +91,7 @@ const ChooseUs = () => {
               Cutting-Edge Web Development
             </h3>
             <p className="text-gray-700 leading-relaxed">
-              Our team comprises seasoned professionals in **web development**, UI/UX design, and **digital marketing**. We leverage the latest technologies and innovative strategies to build future-proof solutions that drive your business forward.
+              Our team comprises seasoned professionals in web development, UI/UX design, and digital marketing. We leverage the latest technologies and innovative strategies to build future-proof solutions that drive your business forward.
             </p>
           </div>
 
@@ -103,7 +103,7 @@ const ChooseUs = () => {
               Designed for Your Success
             </h3>
             <p className="text-gray-700 leading-relaxed">
-              We understand that every business is unique. We provide **custom web solutions** tailored precisely to your specific needs, ensuring your online presence perfectly reflects your brand and achieves your unique objectives.
+              We understand that every business is unique. We provide custom web solutions tailored precisely to your specific needs, ensuring your online presence perfectly reflects your brand and achieves your unique objectives.
             </p>
           </div>
 
@@ -115,7 +115,7 @@ const ChooseUs = () => {
               Maximizing Your ROI
             </h3>
             <p className="text-gray-700 leading-relaxed">
-              Our focus is on delivering tangible results. From **SEO optimization** to conversion-focused design, we implement strategies that boost your online visibility, attract more customers, and generate a significant **return on investment (ROI)**.
+              Our focus is on delivering tangible results. From SEO optimization to conversion-focused design, we implement strategies that boost your online visibility, attract more customers, and generate a significant return on investment (ROI).
             </p>
           </div>
 
@@ -139,7 +139,7 @@ const ChooseUs = () => {
               Built for Growth
             </h3>
             <p className="text-gray-700 leading-relaxed">
-              We engineer **scalable web applications** and robust websites that grow with your business. Security is paramount; we implement industry best practices to protect your data and ensure a safe online environment.
+              We engineer scalable web applications and robust websites that grow with your business. Security is paramount; we implement industry best practices to protect your data and ensure a safe online environment.
             </p>
           </div>
 
@@ -151,13 +151,13 @@ const ChooseUs = () => {
               Your One-Stop Digital Partner
             </h3>
             <p className="text-gray-700 leading-relaxed">
-              From **responsive website design** and **e-commerce development** to ongoing maintenance and **digital advertising**, PryzenTech offers a complete suite of **web services** under one roof, simplifying your digital journey.
+              From responsive website design and e-commerce development to ongoing maintenance and digital advertising, PryzenTech offers a complete suite of web services under one roof, simplifying your digital journey.
             </p>
           </div>
         </section>
 
         {/* Call to Action Section */}
-        <section ref={ctaRef} className="bg-gradient-to-r from-purple-600 to-indigo-700 text-white rounded-2xl shadow-xl p-10 md:p-16 text-center">
+        <section ref={ctaRef} className="bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-2xl shadow-xl p-10 md:p-16 text-center">
           <h3 className="text-3xl sm:text-4xl font-extrabold mb-4 leading-tight">
             Ready to Experience the PryzenTech Difference?
           </h3>

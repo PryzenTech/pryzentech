@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Import ScrollTrigger
 import { useNavigate } from 'react-router-dom';
+import React1 from '../../assets/React1.jpg'
+import React2 from '../../assets/React2.webp'
 gsap.registerPlugin(ScrollTrigger); // Register ScrollTrigger
 
 const ReactDevelopment = () => {
@@ -82,10 +84,10 @@ const ReactDevelopment = () => {
   }, []); // Empty dependency array means this effect runs once on mount
 
   return (
-    <div className="bg-gradient-to-br from-purple-50 to-purple-200 min-h-screen py-2 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-br from-purple-50 to-purple-200  min-h-screen py-2 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[90vw] mx-auto rounded-xl shadow-2xl overflow-hidden bg-white">
         {/* Hero Section for React Development */}
-        <div className="relative p-4 md:p-6 lg:p-8 text-center bg-purple-700 text-white">
+        <div className="paraFont-900 relative p-4 md:p-6 lg:p-8 text-center bg-gradient-to-b from-purple-950 to-purple-300 text-white">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
             React Development
           </h1>
@@ -95,7 +97,7 @@ const ReactDevelopment = () => {
         </div>
 
         {/* Content Section 1: Why Choose React for Your Next Project? */}
-        <div className="flex flex-col md:flex-row items-center gap-10 p-8 md:p-12 lg:p-16">
+        <div className="flex noto-serif flex-col md:flex-row items-center gap-10 p-8 md:p-12 lg:p-16">
           {/* Text Content */}
           <div ref={heroTextRef} className="md:w-1/2 text-gray-800">
             <h2 className="text-3xl sm:text-4xl font-bold text-purple-800 mb-6">
@@ -119,7 +121,7 @@ const ReactDevelopment = () => {
           {/* Image Space */}
           <div ref={heroImageRef} className="md:w-1/2 flex justify-center items-center">
             <img
-              src="https://placehold.co/600x400/8B5CF6/ffffff?text=React+Development"
+              src={React1}
               alt="React Development Illustration"
               className="w-full h-auto rounded-lg shadow-xl border border-purple-300 transform hover:scale-105 transition-transform duration-300 ease-in-out"
               onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/8B5CF6/ffffff?text=Image+Not+Found"; }}
@@ -128,10 +130,10 @@ const ReactDevelopment = () => {
         </div>
 
         {/* Content Section 2: Our React Development Process */}
-        <div ref={section2Ref} className="flex flex-col md:flex-row items-center gap-10 p-8 md:p-12 lg:p-16 bg-purple-50 rounded-b-xl">
+        <div ref={section2Ref} className="noto-serif flex flex-col md:flex-row items-center gap-10 p-8 md:p-12 lg:p-16 bg-purple-50 rounded-b-xl">
           <div ref={section2ImageRef} className="md:w-1/2 flex justify-center items-center">
             <img
-              src="https://placehold.co/600x400/8B5CF6/ffffff?text=React+Process"
+              src={React2}
               alt="React Development Process Illustration"
               className="w-full h-auto rounded-lg shadow-xl border border-purple-300 transform hover:scale-105 transition-transform duration-300 ease-in-out"
               onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/8B5CF6/ffffff?text=React+Process+Image"; }} // Fallback
@@ -156,7 +158,7 @@ const ReactDevelopment = () => {
         </div>
 
         {/* Call to Action or Additional Info */}
-        <div ref={ctaRef} className="bg-purple-600 text-white p-8 md:p-12 lg:p-16 text-center">
+        <div ref={ctaRef} className="paraFont-900 bg-gradient-to-t from-purple-950 to-purple-300 text-white p-8 md:p-12 lg:p-16 text-center">
           <h3 className="text-2xl sm:text-3xl font-bold mb-4">Ready to build with React?</h3>
           <p className="text-lg mb-6">
             Let's discuss your project and see how our React expertise can bring your ideas to life.

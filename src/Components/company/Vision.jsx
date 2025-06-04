@@ -46,7 +46,7 @@ const Vision = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-indigo-50 to-purple-100 min-h-screen font-sans">
+    <div className="paraFont-900 bg-gradient-to-br from-indigo-50 to-purple-100 min-h-screen font-sans">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
 
         {/* Header Section */}
@@ -70,10 +70,10 @@ const Vision = () => {
                 Our Mission: Empowering Digital Excellence
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                PryzenTech's mission is to **empower businesses** of all sizes by providing **innovative, high-quality web solutions** that drive growth, enhance user engagement, and streamline operations. We are dedicated to transforming digital challenges into opportunities for our clients, ensuring their online presence is not just functional, but truly exceptional.
+                PryzenTech's mission is to empower businesses of all sizes by providing innovative, high-quality web solutions that drive growth, enhance user engagement, and streamline operations. We are dedicated to transforming digital challenges into opportunities for our clients, ensuring their online presence is not just functional, but truly exceptional.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                We achieve this through **expert web development**, **strategic digital marketing**, and a relentless commitment to client success.
+                We achieve this through expert web development, strategic digital marketing, and a relentless commitment to client success.
               </p>
             </div>
           </div>
@@ -90,7 +90,7 @@ const Vision = () => {
                 Our Vision: Shaping the Future of Web Services
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                Our vision at PryzenTech is to be the **leading innovator in web services**, recognized globally for our cutting-edge solutions, unparalleled client satisfaction, and significant contributions to the digital landscape. We aim to be the go-to partner for businesses seeking to **transform their online presence** and achieve sustainable digital growth.
+                Our vision at PryzenTech is to be the leading innovator in web services, recognized globally for our cutting-edge solutions, unparalleled client satisfaction, and significant contributions to the digital landscape. We aim to be the go-to partner for businesses seeking to transform their online presence and achieve sustainable digital growth.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
                 We envision a future where every business, regardless of size, can harness the full potential of the internet with our support.

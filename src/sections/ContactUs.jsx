@@ -135,7 +135,7 @@ const submitContactForm = async (data) => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-indigo-50 to-purple-100 min-h-screen font-sans">
+    <div className="paraFont-900 bg-gradient-to-br from-indigo-50 to-purple-100 min-h-screen font-sans">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <section className="text-center mb-16">
@@ -149,14 +149,14 @@ const submitContactForm = async (data) => {
             ref={introTextRef}
             className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto"
           >
-            Have a project in mind, a question about our **web development
-            services**, or just want to say hello? We're here to help you
-            achieve your **digital goals**.
+            Have a project in mind, a question about our web development
+            services, or just want to say hello ? We're here to help you
+            achieve your digital goals.
           </p>
         </section>
 
         {/* Contact Content: Info & Form */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+        <section className="bona-regular grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {/* Contact Information */}
           <div
             ref={contactInfoRef}
@@ -166,8 +166,8 @@ const submitContactForm = async (data) => {
               Reach Out to Our Team
             </h2>
             <p className="text-gray-700 leading-relaxed mb-8">
-              Whether you're looking for a **custom website solution**, **SEO
-              expertise**, or **digital marketing strategies**, our team is
+              Whether you're looking for a custom website solution, SEO
+              expertise, Google Advertising our team is
               ready to assist.
             </p>
 
@@ -182,10 +182,10 @@ const submitContactForm = async (data) => {
                     For general inquiries or project discussions.
                   </p>
                   <a
-                    href="mailto:info@pryzentech.com"
+                    href="mailto:info.pryzentech@gmail.com"
                     className="text-indigo-600 hover:underline"
                   >
-                    info@pryzentech.com
+                    info.pryzentech@gmail.com
                   </a>
                 </div>
               </div>
@@ -236,7 +236,7 @@ const submitContactForm = async (data) => {
             </h3>
             <div className="flex space-x-5">
               <a
-                href="#"
+                href="https://www.instagram.com/pryzentech?utm_source=qr"
                 className="text-purple-600 hover:text-indigo-600 transition-colors duration-200"
               >
                 {/* LinkedIn Icon */}
@@ -253,22 +253,9 @@ const submitContactForm = async (data) => {
                   />
                 </svg>
               </a>
+              
               <a
-                href="#"
-                className="text-purple-600 hover:text-indigo-600 transition-colors duration-200"
-              >
-                {/* Twitter Icon */}
-                <svg
-                  className="w-8 h-8"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.484 0-6.31 2.827-6.31 6.31 0 .497.056.983.164 1.447-5.243-.263-9.89-2.784-13.006-6.6-.543.935-.85 2.03-.85 3.197 0 2.185 1.112 4.12 2.808 5.263-.82-.025-1.59-.251-2.263-.624v.08c0 3.062 2.18 5.618 5.07 6.195-.532.145-1.094.222-1.668.222-.407 0-.802-.04-1.189-.114.804 2.509 3.13 4.339 5.899 4.39-.215.169-.434.331-.657.487-1.162.83-2.52 1.32-3.953 1.32-.257 0-.51-.015-.758-.045 3.013 1.92 6.593 3.044 10.46 3.044 12.55 0 19.33-10.373 19.33-19.33v-.875c1.32-.958 2.45-2.145 3.35-3.49z" />
-                </svg>
-              </a>
-              <a
-                href="#"
+                href="https://www.instagram.com/pryzentech?utm_source=qr"
                 className="text-purple-600 hover:text-indigo-600 transition-colors duration-200"
               >
                 {/* Facebook Icon */}

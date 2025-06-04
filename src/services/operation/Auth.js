@@ -1,6 +1,6 @@
 import { toast } from "react-hot-toast"
 import { apiConnector } from "../apiConnector"
-const BASE_URL = "http://localhost:4000/api/v1"
+const BASE_URL = "https://pryzentech.vercel.app/api/v1"
 
 
 

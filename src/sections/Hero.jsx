@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import { useNavigate } from "react-router-dom";
 import heroimg from "../assets/heroimg2.png"; // Assuming this path is correct in your project
 import hero1 from "../assets/hero1.mp4"; // Assuming this path is correct in your project
 import { FaPhoneAlt } from "react-icons/fa";
 const Hero = () => {
+  const navigate = useNavigate();
   const textRef = useRef(null);
   const imageRef = useRef(null);
   const typingRef = useRef(null);
@@ -64,7 +66,7 @@ const Hero = () => {
   }, [subIndex, index, reverse, phrases]); // Added phrases to dependency array
 
   return (
-    <div className="border-t border-white shadow-lg rounded-lg bg-gradient-to-r from-purple-100 to-purple-300 justify-center">
+    <div className="border-t paraFont-900 border-white shadow-lg rounded-lg bg-gradient-to-r from-purple-100 to-purple-300 justify-center">
       <div className="flex flex-col md:flex-row items-center max-w-[94vw] mt-20 mx-auto px-4 py-12 gap-16 ">
         {/* Text Content */}
         <div
@@ -72,18 +74,13 @@ const Hero = () => {
           className="text-xl font-semibold md:w-[47%] ml-[3vw] leading-relaxed min-h-[230px]" // <- fixed height to avoid image shift
         >
           <div
-            className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 text-purple-800 mr-3"
-            style={{
-              fontFamily: "monospace",
-              whiteSpace: "pre-wrap",
-              wordBreak: "break-word",
-            }}
+            className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 text-purple-800 mr-3 paraFont-900"
             ref={typingRef}
           >
             {text}
             <span className="animate-pulse">|</span>
           </div>
-          <p className="text-gray-800 text-lg">
+          <p className="text-gray-800 text-lg paraFont-600">
             Your all-in-one partner for premium digital solutions. From startups
             to enterprises, we help you build and scale a powerful online
             presence.

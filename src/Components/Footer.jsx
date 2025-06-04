@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-purple-900 to-purple-500 text-white py-12 px-4 sm:px-6 lg:px-8 font-sans">
+    <footer className="noto-serif bg-gradient-to-r from-purple-900 to-purple-500 text-white py-12 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10">
 
         {/* Company Info Section */}
@@ -64,7 +64,7 @@ const Footer = () => {
           <address className="not-italic text-purple-100 space-y-2 text-sm">
             <p>Vishwash Nagar Sihani </p>
             <p>Ghaziabad -201001 </p>
-            <p>Email: <a href="mailto:info@pryzentech.com" className="hover:text-white transition-colors duration-200">info@pryzentech.com</a></p>
+            <p>Email: <a href="mailto:info.pryzentech@gmail.com" className="hover:text-white transition-colors duration-200">info.pryzentech@gmail.com</a></p>
             <p>Phone: <a href="tel:+918882320645" className="hover:text-white transition-colors duration-200">+91 8882320645</a></p>
             <p>Phone: <a href="tel:+918936950459" className="hover:text-white transition-colors duration-200">+91 8936950459</a></p>
           </address>

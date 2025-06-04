@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useNavigate } from 'react-router-dom';
 import Maintainance1 from '../../assets/Maintainance1.jpeg'
+import Maintainance2 from '../../assets/Software-Maintenance2.jpg'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -87,7 +88,7 @@ const SoftwareMaintenance = () => {
     <div className="bg-gradient-to-br from-purple-50 to-purple-200 min-h-screen py-2 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[90vw] mx-auto rounded-xl shadow-2xl overflow-hidden bg-white">
         {/* Hero Section for Software Maintenance & Support */}
-        <div className="relative p-4 md:p-6 lg:p-8 text-center bg-purple-700 text-white">
+        <div className="paraFont-900 relative p-4 md:p-6 lg:p-8 text-center bg-gradient-to-b from-purple-950 to-purple-300 text-white">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
             Software Maintenance & Support
           </h1>
@@ -97,7 +98,7 @@ const SoftwareMaintenance = () => {
         </div>
 
         {/* Content Section 1: Why Software Maintenance */}
-        <div className="flex flex-col md:flex-row items-center gap-10 p-8 md:p-12 lg:p-16">
+        <div className="noto-serif flex flex-col md:flex-row items-center gap-10 p-8 md:p-12 lg:p-16">
           <div ref={heroTextRef} className="md:w-1/2 text-gray-800">
             <h2 className="text-3xl sm:text-4xl font-bold text-purple-800 mb-6">
               Keep Your Applications Running Smoothly and Securely
@@ -127,10 +128,10 @@ const SoftwareMaintenance = () => {
         </div>
 
         {/* Content Section 2: Our Support Approach */}
-        <div ref={section2Ref} className="flex flex-col md:flex-row items-center gap-10 p-8 md:p-12 lg:p-16 bg-purple-50 rounded-b-xl">
+        <div ref={section2Ref} className="noto-serif flex flex-col md:flex-row items-center gap-10 p-8 md:p-12 lg:p-16 bg-purple-50 rounded-b-xl">
           <div ref={section2ImageRef} className="md:w-1/2 flex justify-center items-center">
             <img
-              src="https://placehold.co/600x400/8B5CF6/ffffff?text=Support+Team"
+              src={Maintainance2}
               alt="Support Team Illustration"
               className="w-full h-auto rounded-lg shadow-xl border border-purple-300 transform hover:scale-105 transition-transform duration-300 ease-in-out"
               onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/8B5CF6/ffffff?text=Support+Image"; }} // Fallback
@@ -154,7 +155,7 @@ const SoftwareMaintenance = () => {
         </div>
 
         {/* Call to Action or Additional Info */}
-        <div ref={ctaRef} className="bg-purple-600 text-white p-8 md:p-12 lg:p-16 text-center">
+        <div ref={ctaRef} className="paraFont-900 bg-gradient-to-t from-purple-950 to-purple-300 text-white p-8 md:p-12 lg:p-16 text-center">
           <h3 className="text-2xl sm:text-3xl font-bold mb-4">Secure your software's future.</h3>
           <p className="text-lg mb-6">
             Partner with us for reliable software maintenance and support that keeps your business thriving.
