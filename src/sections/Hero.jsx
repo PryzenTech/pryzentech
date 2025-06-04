@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import heroimg from "../assets/heroimg2.png"; // Assuming this path is correct in your project
-import hero1 from "../assets/hero1.mp4"; // Assuming this path is correct in your project
+// import heroimg from "../assets/heroimg2.png"; // Assuming this path is correct in your project
+import hero1 from "../assets/Hero1.mp4"; // Assuming this path is correct in your project
 import { FaPhoneAlt } from "react-icons/fa";
 const Hero = () => {
   const textRef = useRef(null);
