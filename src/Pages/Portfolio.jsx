@@ -6,9 +6,11 @@ const Portfolio = () => {
 
   useEffect(() => {
     const letters = headingRef.current.querySelectorAll('span');
-    
+
+    // Initial state
     gsap.set(letters, { y: -340, opacity: 0 });
 
+    // Drop animation
     gsap.to(letters, {
       y: 16,
       opacity: 1,
@@ -16,13 +18,15 @@ const Portfolio = () => {
       duration: 2.2,
       ease: 'bounce.out',
       onComplete: () => {
+        
+
+        // Optional small bounce (disabled if not needed)
         gsap.to(letters, {
           y: 16,
           repeat: 0,
-          // yoyo: true,
           stagger: 0.1,
           duration: 0.3,
-          ease: 'power1.inOut'
+          ease: 'power1.inOut',
         });
       }
     });
@@ -32,13 +36,14 @@ const Portfolio = () => {
 
   return (
     <div className="h-[90vh] bg-gradient-to-b from-purple-950 via-purple-700 to-pink-400 text-white flex items-center justify-center">
-      <div className=" h-[70%] flex justify-center items-center">
+      <div className="h-[70%] flex justify-center items-center">
         <h2
+          // Shadows added after bounce complete
           ref={headingRef}
-          className="uppercase border-b text-6xl md:text-9xl font-bold tracking-widest font-serif"
+          className="uppercase md:border-b text-4xl md:text-9xl font-bold tracking-widest font-serif"
         >
           {text.split('').map((letter, i) => (
-            <span key={i} className="inline-block ">
+            <span key={i} className="inline-block mx-0.5">
               {letter}
             </span>
           ))}
@@ -49,3 +54,4 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
+
