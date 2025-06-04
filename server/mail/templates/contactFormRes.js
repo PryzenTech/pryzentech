@@ -1,9 +1,5 @@
 exports.contactUsEmail = (
-  email,
-  name,
-  message,
-  phoneNo,
-  service 
+ email, fullName, message, service, phoneNo
 ) => {
   return `<!DOCTYPE html>
   <html>
@@ -44,7 +40,7 @@ exports.contactUsEmail = (
           .cta {
               display: inline-block;
               padding: 20px 30px;
-              background-color: #FFD60A;
+              background-color: #9810fa;
               color: #000000;
               text-decoration: none;
               border-radius: 5px;
@@ -72,11 +68,11 @@ exports.contactUsEmail = (
           <a class="cta" href=" ">Pryzen Technologies</a>
           <div class="message">Contact Form Confirmation</div>
           <div class="body">
-              <p >Dear ${name},</p>
+              <p >Dear ${fullName},</p>
               <p>Thank you for contacting us. We have received your message and will respond to you as soon as possible.
               </p>
               <p>Here are the details you provided:</p>
-              <p>Name: ${name}</p>
+              <p>Name: ${fullName}</p>
               <p>Email: ${email}</p>
               <p>Service: ${service}</p>
               <p>Phone Number: ${phoneNo}</p>

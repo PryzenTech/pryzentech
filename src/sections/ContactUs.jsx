@@ -2,11 +2,17 @@ import React, { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 import axios from "axios"; // Import axios for API calls
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form"; // Import useForm for form management
+
+
+import { apiConnector } from "../services/apiConnector";
+import { mailpoint } from "../services/operation/Auth";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ContactUs = () => {
+  const navigate = useNavigate();
   // State for form submission status and loading
   const [loading, setLoading] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState(null); // 'success', 'error', null
@@ -19,39 +25,41 @@ const ContactUs = () => {
     formState: { errors, isSubmitSuccessful },
   } = useForm();
 
-  // Function to handle form submission
-  const submitContactForm = async (data) => {
+  // Inside submitContactForm function in ContactUs.jsx
+const submitContactForm = async (data) => {
+  try {
     setLoading(true);
     setSubmissionStatus(null); // Reset status on new submission
+    const res = await apiConnector("POST", mailpoint.SENDMAIL_API, data);
+    // console.log("Email Res - ", res);
 
-    try {
-      // Replace with your actual backend API endpoint
-      const response = await axios.post("/api/v1/mail", data); // Assuming /api/contact is your backend endpoint
-
-      if (response.status === 200) {
-        setSubmissionStatus("success");
-        reset(); // Reset form fields on successful submission
-      } else {
-        setSubmissionStatus("error");
-        console.error("Form submission failed with status:", response.status);
-      }
-    } catch (error) {
+    // Assuming your API returns a structure like { success: true/false }
+    // or you can check res.status or res.data.success
+    if (res.data.success || (res.status >= 200 && res.status < 300)) { // Adjust condition based on your API response
+      setSubmissionStatus("success");
+    } else {
       setSubmissionStatus("error");
-      console.error("Error submitting form:", error);
-      // You might want to display a more user-friendly error message here
-    } finally {
-      setLoading(false);
     }
-  };
+    setLoading(false);
+  } catch (error) {
+    console.log("ERROR MESSAGE - ", error.message);
+    setSubmissionStatus("error"); // Set error status on catch
+    setLoading(false);
+  }
+};
 
-  // Effect to reset submission status after successful submission
   useEffect(() => {
     if (isSubmitSuccessful) {
-      // You can add a timeout here to clear the success message after a few seconds
-      // For now, it will stay until the user navigates away or submits again.
+      reset({
+        email: "",
+        fullName: "",
+        service: "",
+        message: "",
+        phoneNo: "",
+      });
+      navigate("/contactus");
     }
-  }, [isSubmitSuccessful]);
-
+  }, [reset, isSubmitSuccessful]);
   // Refs for GSAP animations
   const headingRef = useRef(null);
   const introTextRef = useRef(null);
@@ -394,13 +402,13 @@ const ContactUs = () => {
                 >
                   <option value="">Select a service</option>
                   <option>Custom Website Development</option>
-                  <option>E-commerce Solutions</option>
                   <option>Frontend Development</option>
                   <option>Backend Development</option>
+                  <option>React Development</option>
                   <option>UI/UX Design</option>
                   <option>Software Maintenance & Support</option>
                   <option>SEO Optimization</option>
-                  <option>Digital Marketing & Advertising</option>
+                  <option>Google Advertising</option>
                 </select>
                 {errors.service && (
                   <p className="text-red-500 text-sm mt-1">
