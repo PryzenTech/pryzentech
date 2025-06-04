@@ -17,9 +17,9 @@ const Portfolio = () => {
       ease: 'bounce.out',
       onComplete: () => {
         gsap.to(letters, {
-          y: 0,
+          y: 16,
           repeat: 0,
-          yoyo: true,
+          // yoyo: true,
           stagger: 0.1,
           duration: 0.3,
           ease: 'power1.inOut'
@@ -38,7 +38,7 @@ const Portfolio = () => {
           className="uppercase border-b text-6xl md:text-9xl font-bold tracking-widest font-serif"
         >
           {text.split('').map((letter, i) => (
-            <span key={i} className="inline-block px-1">
+            <span key={i} className="inline-block ">
               {letter}
             </span>
           ))}
