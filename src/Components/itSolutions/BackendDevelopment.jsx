@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import backendimg1 from "../../assets/backend1.jpeg";
+import backendimg1 from "../../assets/Backend1.jpeg";
 import backendimg2 from "../../assets/backend2.jpeg";
 import { useNavigate } from "react-router-dom";
 
