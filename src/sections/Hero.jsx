@@ -105,17 +105,21 @@ const Hero = () => {
               </button>
             </div>
             <div className="flex items-center gap-4">
-             {/* <p className="text-red-600 cursor-pointer"><FaPhoneAlt /></p>
-               <div className="">
-                <p  className="text-purple-800 cursor-pointer ">Call us: 
-                  <br/>
-                  <a href="tel:+918936950459" className="text-purple-800 cursor-pointer hover:text-purple-600 transition-colors duration-200">+91 8936950459</a> <br/>
+              <div className="flex items-center gap-4">
+              <p className="flex items-center gap-4 text-red-600 cursor-pointer">
+                <FaPhoneAlt />
+              
+              </p>
+              <div className="">
+                <p  className="text-purple-800 cursor-pointer ">Call us: <span> </span>
                   <a href="tel:+918882320645" className="text-purple-800 cursor-pointer hover:text-purple-600 transition-colors duration-200">+91 8882320645</a>
-                  </p>
-                
+                  
                 <p className=" h-0.5 bg-black"></p>
-                <p className="text-red-400">for any questions</p>
-              </div> */}
+                  </p>
+                  <a href="tel:+918936950459" className="text-purple-800 cursor-pointer hover:text-purple-600 transition-colors duration-200">+91 8936950459</a> <br/>
+                
+              </div>
+            </div>
             </div>
           </div>
         </div>
