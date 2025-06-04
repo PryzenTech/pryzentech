@@ -4,5 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(),  tailwindcss()],
+  base: '/', // Ensures correct routing behavior in production (e.g., on Vercel)
+  plugins: [react(), tailwindcss()],
 })
