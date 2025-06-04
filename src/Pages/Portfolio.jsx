@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import comingSoonImage from '../assets/comingSoon.jpg'// Import the image
 
 const Portfolio = () => {
   const headingRef = useRef(null);
@@ -29,6 +28,8 @@ const Portfolio = () => {
     });
   }, []);
 
+  const text = 'Coming soon';
+
   return (
     <div className="h-[90vh] bg-gradient-to-b from-purple-950 via-purple-700 to-pink-400 text-white flex items-center justify-center">
       <div className=" h-[70%] flex justify-center items-center">
@@ -47,4 +48,4 @@ const Portfolio = () => {
   );
 };
 
-export default ComingSoonBanner;
+export default Portfolio;
