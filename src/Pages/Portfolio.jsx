@@ -18,10 +18,7 @@ const Portfolio = () => {
       duration: 2.2,
       ease: 'bounce.out',
       onComplete: () => {
-        // Add shadows after animation
-        letters.forEach((letter, i) => {
-          letter.style.textShadow = `0 10px 10px rgba(229, 231, 235, ${0.2 + (i % 4) * 0.2})`; // rgba for gray-200 shades
-        });
+        
 
         // Optional small bounce (disabled if not needed)
         gsap.to(letters, {
@@ -43,7 +40,7 @@ const Portfolio = () => {
         <h2
           // Shadows added after bounce complete
           ref={headingRef}
-          className="uppercase md:border-b text-5xl md:text-9xl font-bold tracking-widest font-serif"
+          className="uppercase md:border-b text-4xl md:text-9xl font-bold tracking-widest font-serif"
         >
           {text.split('').map((letter, i) => (
             <span key={i} className="inline-block mx-0.5">
