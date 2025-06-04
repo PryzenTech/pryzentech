@@ -1,16 +1,16 @@
 {
 	"name": "portfolio-backend",
 	"version": "1.0.0",
-	"description": "Shazo-backend",
+	"description": "Pryzentech-backend",
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",
 		"dev": "nodemon index.js"
 	},
 	"keywords": [
-		"Shazo-backend"
+		"Pryzentech-backend"
 	],
-	"author": "Saikat Mukherjee",
+	"author": "Kunal Koushik",
 	"license": "ISC",
 	"dependencies": {
 		"cors": "^2.8.5",
