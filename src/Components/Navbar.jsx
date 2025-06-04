@@ -139,7 +139,7 @@ const Navbar = () => {
               {item.children && (
                 <ul
                   // Use activeDropdown for explicit control, combined with group-hover for resilience
-                  className={`absolute z-50 bg-white text-black mt-[1px] p-2 rounded shadow-lg w-72 origin-top transition-all duration-200 ease-out transform border-2 
+                  className={`absolute z-50 bg-white text-black mt-[1px] p-2 rounded shadow-lg w-72 origin-top transition-all duration-200 ease-out transform 
                     ${activeDropdown === item.name ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 pointer-events-none'}
                     group-hover:scale-y-100 group-hover:opacity-100 group-hover:pointer-events-auto
                   `}
