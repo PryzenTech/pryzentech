@@ -22,10 +22,12 @@ import UIUX from "./Components/itSolutions/UIUX";
 import WebDevelopment from "./Components/itSolutions/WebDevelopment";
 import HomePage from "./Pages/HomePage";
 import Footer from "./Components/Footer";
+import ScrollToTop from "./services/ScrollToTop";
 const App = () => {
   return (
     <div className="">
       <Router>
+        <ScrollToTop/>
         <Navbar />
         <div className="mt-18 ">
           <Routes>
