@@ -116,7 +116,7 @@ const Animation = () => {
   return (
     <div className="w-full h-[40rem]  flex items-center justify-center">
       <div
-        className="relative w-[400px] h-[400px] rounded-3xl bg-purple-400 shadow-[ 
+        className="relative w-[400px] h-[400px] rounded-3xl shadow-[ 
           0_4px_15px_rgba(0,0,0,0.7), 
           inset_0_0_30px_rgba(255,255,255,0.05),
           0_0_20px_5px_rgba(152,0,255,0.4)
