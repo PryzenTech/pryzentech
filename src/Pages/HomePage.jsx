@@ -39,7 +39,7 @@ const HomePage = () => {
       <OurCompany />
       <Services />
       <OurValues />
-      <Clients />
+      {/* <Clients /> */}
       <TestimonialsSection/>
       <div className="noto-serif bg-gradient-to-r from-purple-100 to-purple-300  relative z-10 p-4 px-4  shadow-lg flex flex-col items-center justify-center gap-2 rounded-lg">
         <p>Let’s get started</p>

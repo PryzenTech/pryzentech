@@ -40,33 +40,28 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
-    if (index >= phrases.length) return;
+  if (index >= phrases.length) return;
 
-    const timeout = setTimeout(
-      () => {
-        setText(phrases[index].substring(0, subIndex));
+  let timeout;
 
-        if (!reverse) {
-          if (subIndex < phrases[index].length) {
-            setSubIndex((prev) => prev + 1);
-          } else {
-            setReverse(true);
-            setTimeout(() => {}, 1000); // pause before deleting
-          }
-        } else {
-          if (subIndex > 0) {
-            setSubIndex((prev) => prev - 1);
-          } else {
-            setReverse(false);
-            setIndex((prev) => (prev + 1) % phrases.length);
-          }
-        }
-      },
-      reverse ? 30 : 70
-    );
+  if (!reverse && subIndex === phrases[index].length) {
+    // Pause after typing complete
+    timeout = setTimeout(() => setReverse(true), 1500); // 2 sec pause
+  } else if (reverse && subIndex === 0) {
+    // Pause after deleting
+    timeout = setTimeout(() => {
+      setReverse(false);
+      setIndex((prev) => (prev + 1) % phrases.length);
+    }, 500); // 1 sec pause
+  } else {
+    timeout = setTimeout(() => {
+      setText(phrases[index].substring(0, subIndex));
+      setSubIndex((prev) => prev + (reverse ? -1 : 1));
+    }, reverse ? 75 : 150); // slower typing/deleting
+  }
 
-    return () => clearTimeout(timeout);
-  }, [subIndex, index, reverse, phrases]); // Added phrases to dependency array
+  return () => clearTimeout(timeout);
+}, [subIndex, index, reverse, phrases]); // Added phrases to dependency array
 
   return (
     <div className="border-t paraFont-900 border-white shadow-lg rounded-lg bg-gradient-to-r from-purple-100 to-purple-300 justify-center">
@@ -89,8 +84,8 @@ const Hero = () => {
             presence.
           </p>
 
-          <div className="flex mt-10 py-4 items-center gap-10 ">
-            <div className=" ">
+          
+            <div className="flex flex-col mt-4 ">
               <p className="px-1">Start Your Project </p>
 
               <button
@@ -100,22 +95,20 @@ const Hero = () => {
                   navigate("/contactus")
                 }
                 }
-                className=" hover:scale-110 border rounded-md bg-gradient-to-b from-purple-950 to-purple-400 text-white px-4 py-2 cursor-pointer"
+                className="w-1/4 mt-2 hover:scale-110 border rounded-md bg-gradient-to-b flex gap-4 items-center from-purple-950 to-purple-400 text-white px-4 py-2 cursor-pointer"
 
               >
                 Contact Us
-              </button>
-            </div>
-            <div className="flex items-center gap-4">
-
-              <div className="flex items-center gap-4">
-
-              <p className="flex items-center gap-4 text-red-600 cursor-pointer">
+                <p className="flex items-center gap-4 text-red-600 cursor-pointer">
                 <FaPhoneAlt />
               
               </p>
-              <div className="">
-                <p  className="text-purple-800 cursor-pointer ">Call us: <span> </span>
+              </button>
+              <div className="flex items-center gap-4">
+
+              
+              <div className="mt-2">
+                <p  className="text-purple-800 cursor-pointer ">
                   <a href="tel:+918882320645" className="text-purple-800 cursor-pointer hover:text-purple-600 transition-colors duration-200">+91 8882320645</a>
                   
                 <p className=" h-0.5 bg-black"></p>
@@ -125,9 +118,9 @@ const Hero = () => {
               </div>
 
             </div>
-
             </div>
-          </div>
+            
+          
         </div>
 
         {/* Video */}

@@ -30,20 +30,20 @@ const itSolutions = [
   { name: 'React Development', path: '/solutions/react-development', icon: <FaAndroid /> },
   { name: 'UI/UX Design', path: '/solutions/ui-ux', icon: <FaApple /> },
   { name: 'Software Maintenance & Support', path: '/solutions/software-maintenanace', icon: <FaShieldAlt /> },
-  { name: 'SEO Optimization', path: '/solutions/seo-optimization', icon: <FaCloud /> },
+  // { name: 'SEO Optimization', path: '/solutions/seo-optimization', icon: <FaCloud /> },
   { name: 'Advertising', path: '/solutions/google-advertising', icon: <FaLightbulb /> },
 ];
 
 const company = [
   { name: 'About', path: '/company/aboutcompany', icon: <MdInfo /> },
   { name: 'Mission, Vision and Values', path: '/company/vision-mission', icon: <FaLightbulb /> },
-  // { name: 'Awards', path: '/company/awards', icon: <FaAward /> },
   { name: 'Leadership Team', path: '/company/team', icon: <MdSupervisorAccount /> },
+  { name: 'Why Choose Us', path: '/company/why-choose-us', icon: <FaUsers /> },
+  { name: 'FAQ', path: '/company/faq', icon: <FaQuestionCircle /> },
+  // { name: 'Awards', path: '/company/awards', icon: <FaAward /> },
   // { name: 'Media', path: '/company/media', icon: <MdOutlinePhotoLibrary /> },
   // { name: 'Careers', path: '/company/careers', icon: <FaBriefcase /> },
-  { name: 'Why Choose Us', path: '/company/why-choose-us', icon: <FaUsers /> },
   // { name: 'Locations', path: '/company/locations', icon: <FaMapMarkerAlt /> },
-  { name: 'FAQ', path: '/company/faq', icon: <FaQuestionCircle /> },
 ];
 
 const navItems = [
@@ -113,11 +113,11 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex md:items-center gap-6 text-sm">
+        <ul className="hidden md:text-xl md:flex md:items-center gap-6 text-sm">
           {navItems.map((item, idx) => (
             <li
               key={idx}
-              className="relative group text-sm"
+              className="relative group text-sm md:text-xl"
               onMouseEnter={() => handleMouseEnter(item.name)}
               onMouseLeave={handleMouseLeave}
             >
@@ -129,7 +129,7 @@ const Navbar = () => {
                 </Link>
               ) : (
                 // Item with dropdown
-                <div className="flex items-center gap-1 cursor-pointer hover:text-purple-300 select-none py-2 px-1">
+                <div className="flex items-center gap-1 cursor-pointer hover:text-purple-300 select-none py-2 px-1 ">
                   {item.icon}
                   <span className=''>{item.name}</span>
                 </div>
@@ -139,7 +139,7 @@ const Navbar = () => {
               {item.children && (
                 <ul
                   // Use activeDropdown for explicit control, combined with group-hover for resilience
-                  className={`absolute z-50 bg-white text-black mt-[1px] p-2 rounded shadow-lg w-72 origin-top transition-all duration-200 ease-out transform 
+                  className={`absolute text-lg z-50 bg-white text-black mt-[1px] p-2 rounded shadow-lg w-78 origin-top transition-all duration-200 ease-out transform 
                     ${activeDropdown === item.name ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 pointer-events-none'}
                     group-hover:scale-y-100 group-hover:opacity-100 group-hover:pointer-events-auto
                   `}
