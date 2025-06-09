@@ -12,9 +12,12 @@
     "dev": "concurrently -n \"client,server\" -c \"bgBlue,bgYellow\" \"npm run start\" \"npm run Server\""
   },
   "dependencies": {
+    "@react-three/drei": "^10.1.2",
+    "@react-three/fiber": "^9.1.2",
     "@tailwindcss/vite": "^4.1.8",
     "axios": "^1.9.0",
     "concurrently": "^9.1.2",
+    "framer-motion": "^12.16.0",
     "gsap": "^3.13.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -22,9 +25,11 @@
     "react-hot-toast": "^2.5.2",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.6.1",
+    "react-tsparticles": "^2.12.2",
     "swiper": "^11.2.8",
     "tailwindcss": "^4.1.8",
-    "three": "^0.177.0"
+    "three": "^0.177.0",
+    "tsparticles": "^3.8.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",

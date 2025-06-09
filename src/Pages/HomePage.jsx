@@ -1,24 +1,4 @@
-// import React from 'react'
-// import Hero from '../sections/Hero'
-// import Services from '../sections/Services'
-// import Clients from '../sections/Clients'
-// import OurValues from '../sections/OurValues'
-
-// const HomePage = () => {
-//   return (
-//     <div className='text-purple-900'>
-//         <Hero />
-//         <Services/>
-//         <Clients/>
-//         <OurValues/>
-//     </div>
-
-//   )
-// }
-
-// export default HomePage
-// src/HomePage.jsx
-import React from "react";
+import React,{useEffect} from "react";
 import Hero from "../sections/Hero";
 import Services from "../sections/Services";
 import Clients from "../sections/Clients";
@@ -27,35 +7,46 @@ import OurCompany from "../sections/OurCompany";
 import { useNavigate } from 'react-router-dom';
 import TestimonialsSection from "../sections/TestimonialsSection";
 
-const HomePage = () => {
-    const navigate = useNavigate();
-  return (
-    <div className="">
-      {/* The 3D background is now here, fixed behind all content */}
-      {/* <ScrollExplosionEffect /> */}
+import Scroll3DEffect from "../Components/Scroll3DEffect";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-      {/* All sections will now stack on top of the fixed 3D background */}
-      <Hero />
-      <OurCompany />
-      <Services />
-      <OurValues />
-      {/* <Clients /> */}
-      <TestimonialsSection/>
-      <div className="noto-serif bg-gradient-to-r from-purple-100 to-purple-300  relative z-10 p-4 px-4  shadow-lg flex flex-col items-center justify-center gap-2 rounded-lg">
-        <p>Let’s get started</p>
-        <p>
-          Are you ready for a better, more productive business? 
-          </p>
-          <p>Stop worrying
-          about technology problems. Focus on your business. Let us provide the
-          support you deserve.
-        </p>
-        <button type="button" onClick={()=>{
-          navigate('/contactus')
-        }}
-        className="hover:scale-110 border rounded-md bg-purple-800 text-white p-2 px-4">
-          Contact Us
-        </button>
+
+const HomePage = () => {
+  const navigate = useNavigate();
+  
+ 
+  return (
+    <div className="relative min-h-screen  text-white overflow-x-hidden">
+      {/* Add the 3D scroll effect */}
+      {/* <Scroll3DEffect /> */}
+      
+      {/* All content sections with higher z-index */}
+      <div className="relative z-10">
+        <Hero />
+
+        <OurCompany />
+        <Services />
+        <OurValues />
+        <TestimonialsSection />
+        
+        <div className="max-w-4xl mx-auto my-20 p-8 bg-gradient-to-r from-purple-800 to-purple-500 backdrop-blur-sm rounded-xl shadow-2xl border border-purple-500/30">
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6  bg-clip-text">
+              Ready for a Digital Transformation?
+            </h2>
+            <div className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-purple-100">
+              Stop worrying about technology problems. Focus on your business. 
+              Let us provide the support you deserve.
+            </div>
+            <button 
+              onClick={() => navigate('/contactus')}
+              className="px-8 py-3 rounded-full border text-white font-bold text-lg hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-xl"
+            >
+              Contact Us Today
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
